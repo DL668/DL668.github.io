@@ -20,16 +20,16 @@
   <title>小迪23年-22~27——php简单回顾（2） - 轻抚酸</title>
 
   
-    <meta name="description" content="非原生开发 课堂完结后欲复习巩固也方便后续-重游-故写此篇从实现功能过渡到涉及的相关知识点  前端模板功能 1、有点前后端分离的思想。写好前端模板代码后由后端语言去替换相应的部分达到模板的作用。一般有两种实现实现方式：原生与第三方。2、code比如&lt;h1 class&#x3D;&quot;news-title&quot;&gt;第&#123;nums&#125;个新闻：&#123;title&amp;#125">
+    <meta name="description" content="b站小迪23年网安基础课程，22节——27节，php简单回顾（2）">
 <meta property="og:type" content="article">
 <meta property="og:title" content="小迪23年-22~27——php简单回顾（2）">
 <meta property="og:url" content="https://www.hfqing.top/2025/08/02/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-22~27%E2%80%94%E2%80%94php%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE%EF%BC%882%EF%BC%89/">
 <meta property="og:site_name" content="轻抚酸">
-<meta property="og:description" content="非原生开发 课堂完结后欲复习巩固也方便后续-重游-故写此篇从实现功能过渡到涉及的相关知识点  前端模板功能 1、有点前后端分离的思想。写好前端模板代码后由后端语言去替换相应的部分达到模板的作用。一般有两种实现实现方式：原生与第三方。2、code比如&lt;h1 class&#x3D;&quot;news-title&quot;&gt;第&#123;nums&#125;个新闻：&#123;title&amp;#125">
+<meta property="og:description" content="b站小迪23年网安基础课程，22节——27节，php简单回顾（2）">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://www.hfqing.top/images/avatar2.svg">
 <meta property="article:published_time" content="2025-08-02T03:45:48.000Z">
-<meta property="article:modified_time" content="2025-08-02T09:08:17.819Z">
+<meta property="article:modified_time" content="2025-09-13T08:38:31.889Z">
 <meta property="article:author" content="轻抚酸">
 <meta property="article:tag" content="网课小迪">
 <meta property="article:tag" content="温习">
@@ -42,6 +42,8 @@
 
   <!-- feed -->
   
+    <link rel="alternate" href="/atom.xml" title="轻抚酸" type="application/atom+xml">
+  
 
   <link rel="stylesheet" href="/css/main.css?v=1.33.1">
 <link rel="stylesheet" href="/css/custom.css">
@@ -51,7 +53,7 @@
 
   
 
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"轻抚酸","sameAs":[],"image":"/images/avatar2.svg"},"dateCreated":"2025-08-02T11:45:48+08:00","dateModified":"2025-08-02T17:08:17+08:00","datePublished":"2025-08-02T11:45:48+08:00","description":"","headline":"小迪23年-22~27——php简单回顾（2）","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.hfqing.top/2025/08/02/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-22~27%E2%80%94%E2%80%94php%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE%EF%BC%882%EF%BC%89/"},"publisher":{"@type":"Organization","name":"轻抚酸","sameAs":[],"image":"/images/avatar2.svg","logo":{"@type":"ImageObject","url":"/images/avatar2.svg"}},"url":"https://www.hfqing.top/2025/08/02/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-22~27%E2%80%94%E2%80%94php%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE%EF%BC%882%EF%BC%89/","keywords":"网课小迪, 温习","image":[]}</script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"轻抚酸","sameAs":[],"image":"/images/avatar2.svg"},"dateCreated":"2025-08-02T11:45:48+08:00","dateModified":"2025-09-13T16:38:31+08:00","datePublished":"2025-08-02T11:45:48+08:00","description":"b站小迪23年网安基础课程，22节——27节，php简单回顾（2）","headline":"小迪23年-22~27——php简单回顾（2）","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.hfqing.top/2025/08/02/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-22~27%E2%80%94%E2%80%94php%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE%EF%BC%882%EF%BC%89/"},"publisher":{"@type":"Organization","name":"轻抚酸","sameAs":[],"image":"/images/avatar2.svg","logo":{"@type":"ImageObject","url":"/images/avatar2.svg"}},"url":"https://www.hfqing.top/2025/08/02/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-22~27%E2%80%94%E2%80%94php%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE%EF%BC%882%EF%BC%89/","keywords":"网课小迪, 温习","image":[]}</script>
   <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'">
 </head>
 <body>
@@ -59,7 +61,7 @@
 <div class="l_body content" id="start" layout="post" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
 
 
-<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/images/avatar2.svg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">轻抚酸</div><div class="sub normal cap">网安菜鸡日记</div><div class="sub hover cap" style="opacity:0"> 来互啄呀</div></a></div></header>
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/images/avatar2.svg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">轻抚酸</div><div class="sub normal cap">从分享欲开始</div><div class="sub hover cap" style="opacity:0"> 我即FW！</div></a></div></header>
 
 <div class="nav-area">
 
@@ -70,9 +72,9 @@
 
 
 
-<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span></div><div class="widget-body fs14"><a class="item title" href="/2025/07/25/kali%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5-%E9%80%89%E6%8B%A9%E5%B9%B6%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%8C%85-%E4%B8%80%E6%AD%A5%E5%88%B0%E4%BD%8D/"><span class="title">kali安装失败-选择并安装软件包-一步到位</span></a><a class="item title" href="/2025/08/08/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-32~40%E2%80%94%E2%80%94java%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE%EF%BC%881%EF%BC%89/"><span class="title">小迪23年-32~40——java简单回顾（1）</span></a><a class="item title" href="/2025/08/02/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-28~31%E2%80%94%E2%80%94js%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE/"><span class="title">小迪23年-28~31——js简单回顾</span></a><a class="item title" href="/2025/08/01/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-22~27%E2%80%94%E2%80%94php%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE%EF%BC%881%EF%BC%89/"><span class="title">小迪23年-22~27——php简单回顾（1）</span></a><a class="item title" href="/2025/08/02/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-22~27%E2%80%94%E2%80%94php%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE%EF%BC%882%EF%BC%89/"><span class="title">小迪23年-22~27——php简单回顾（2）</span></a></div></widget>
+<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span><a class="cap-action" id="rss" title="Subscribe" href="atom.xml"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19q0-.825.588-1.412T5 17q.825 0 1.413.588T7 19q0 .825-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1q-1.65-1.65-3.762-2.687T4.6 7.1q-.65-.075-1.125-.512T3 5.5q0-.65.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337q2.05 2.05 3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35q-.85-.85-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062q1.25 1.25 2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/></svg></a></div><div class="widget-body fs14"><a class="item title" href="/2025/07/25/kali%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5-%E9%80%89%E6%8B%A9%E5%B9%B6%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%8C%85-%E4%B8%80%E6%AD%A5%E5%88%B0%E4%BD%8D/"><span class="title">kali安装失败-选择并安装软件包-一步到位</span></a><a class="item title" href="/2025/08/01/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-22~27%E2%80%94%E2%80%94php%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE%EF%BC%881%EF%BC%89/"><span class="title">小迪23年-22~27——php简单回顾（1）</span></a><a class="item title" href="/2025/08/02/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-22~27%E2%80%94%E2%80%94php%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE%EF%BC%882%EF%BC%89/"><span class="title">小迪23年-22~27——php简单回顾（2）</span></a><a class="item title" href="/2025/08/02/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-28~31%E2%80%94%E2%80%94js%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE/"><span class="title">小迪23年-28~31——js简单回顾</span></a><a class="item title" href="/2025/08/08/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-32~40%E2%80%94%E2%80%94java%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE%EF%BC%881%EF%BC%89/"><span class="title">小迪23年-32~40——java简单回顾（1）</span></a></div></widget>
 </div>
-<footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://github.com/DL668" target="_blank" rel="external nofollow noopener noreferrer"><img src="/images/footer/github.svg"/></a></div></footer>
+<footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://github.com/DL668" target="_blank" rel="external nofollow noopener noreferrer"><img src="/images/github2.svg"/></a><a class="social" href="https://qm.qq.com/cgi-bin/qm/qr?k=jBzttOhbydvSf_PcHQbAokSpvSrBj9jC" target="_blank" rel="external nofollow noopener noreferrer"><img src="/images/qq.svg"/></a></div></footer>
 </div></aside><div class="l_main" id="main">
 
 
@@ -83,7 +85,7 @@
   <div class="content">
     <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
 <span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E8%AF%BE%E5%A0%82/">课堂</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/%E8%AF%BE%E5%A0%82/%E7%AC%94%E8%AE%B0/">笔记</a></div>
-<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-08-02T03:45:48.000Z">2025-08-02</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-08-02T09:08:17.819Z">2025-08-02</time></span></div></div></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-08-02T03:45:48.000Z">2025-08-02</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-09-13T08:38:31.889Z">2025-09-13</time></span></div></div></div>
     
     <div class="bottom only-title">
       
@@ -94,7 +96,10 @@
     </div>
     
   </div>
-  </div><article class="md-text content"><h1 id="非原生开发"><a href="#非原生开发" class="headerlink" title="非原生开发"></a>非原生开发</h1><blockquote>
+  </div><article class="md-text content"><p>b站小迪23年网安基础课程，22节——27节，php简单回顾（2）</p>
+<span id="more"></span>
+
+<h1 id="非原生开发"><a href="#非原生开发" class="headerlink" title="非原生开发"></a>非原生开发</h1><blockquote>
 <p>课堂完结后欲复习巩固也方便后续-重游-故写此篇<br>从实现功能过渡到涉及的相关知识点</p>
 </blockquote>
 <h2 id="前端模板功能"><a href="#前端模板功能" class="headerlink" title="前端模板功能"></a>前端模板功能</h2><blockquote>
@@ -125,7 +130,7 @@
 <p>变量：<code>&#123;$only_name&#125;</code>，就是里面加了个 $<br>单个替换：<code>$smarty-&gt;assign(&quot;Name&quot;, &quot;开炮！&quot;, true);</code></p>
 <p><strong>2、</strong> 这里用语法里的 display() 函数来复习运行php文件内部流程：</p>
 <p><em>目录结构</em></p>
-<p><img src="/images/2025/%E7%A7%8B-8-10/php%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE(2)/a_1.jpeg" alt="目录结构"></p>
+<p><img src="https://imgproxy.hfqing.top/image/?url=https://p.cldisk.com/star3/origin/7ed15e36e229f384d1abbb4d416bec91.png" alt="目录结构"></p>
 <p><em>code：</em></p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在代码最后调用display()，里面是前端模板以template文件为根的相对路径</span></span><br><span class="line"><span class="variable">$smarty</span>-&gt;<span class="title function_ invoke__">display</span>(<span class="string">&#x27;index.tpl&#x27;</span>);</span><br></pre></td></tr></table></figure>
 
@@ -151,7 +156,7 @@
 <blockquote>
 <p>以上面首页为例，除了默认访问之外还可以通过 “模块名&#x2F;控制器名&#x2F;方法名” 来访问，所以是<code>127.0.0.1:81/index.php/index/index/index</code>，如图，第一个 index 为 application 下的模块名，第二个index为模块下 controller 里的首字母大写（规范写法）的控制器名：Index，最后是 index.php 里的方法名 index;</p>
 </blockquote>
-<p><img src="/images/2025/%E7%A7%8B-8-10/php%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE(2)/a_2.png" alt="在这里插入图片描述"></p>
+<p><img src="https://imgproxy.hfqing.top/image/?url=https://p.cldisk.com/star3/origin/e91a13c37ec26ced51a46aff7d490358.png" alt="目录结构"></p>
 <p><strong>二、参数路由</strong></p>
 <p><strong>1、</strong> thinkphp 不但支持参数的 get方式传递<code>?id=1</code>，还支持路由传递<code>/id/1</code>，想实现这种方式code如下：</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="comment">//入口</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title class_">app</span>\<span class="title class_">index</span>\<span class="title class_">controller</span>;</span><br><span class="line"><span class="comment">//引入</span></span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">Controller</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">Request</span>;</span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Index</span> <span class="keyword">extends</span> <span class="title">Controller</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">	<span class="comment">//首页</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">    	<span class="comment">//自控显示</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">123</span>;</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">//框架传递参数方式</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">test1</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="variable language_">$this</span>-&gt;request-&gt;<span class="title function_ invoke__">param</span>(<span class="string">&#x27;name&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">//原生传递参数方式</span></span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">test2</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="variable">$name</span>=<span class="variable">$_GET</span>[<span class="string">&#x27;name&#x27;</span>];</span><br><span class="line">        <span class="keyword">return</span> <span class="variable">$name</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -169,7 +174,7 @@
 <h3 id="数据库操作"><a href="#数据库操作" class="headerlink" title="数据库操作"></a>数据库操作</h3><blockquote>
 <p>也容易猜，只需配置文件里设置就好了：在 主文件下&#x2F;config&#x2F;database.php里，如下图：<br>还有就是如果需要引用数据库，那么就在上面加上 <code>use think\Db;</code> 引入就好了。</p>
 </blockquote>
-<p><img src="/images/2025/%E7%A7%8B-8-10/php%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE(2)/a_3.png" alt="在这里插入图片描述"></p>
+<p><img src="https://imgproxy.hfqing.top/image/?url=https://p.cldisk.com/star3/origin/65accfd140fa27da5dbc6d8e7be7bef4.png" alt="配置信息"></p>
 <p><em>示例代码如下：</em></p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line"><span class="keyword">namespace</span> <span class="title class_">app</span>\<span class="title class_">index</span>\<span class="title class_">controller</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">Db</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">Controller</span>;</span><br><span class="line"><span class="keyword">use</span> <span class="title">think</span>\<span class="title">Request</span>;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Index</span> <span class="keyword">extends</span> <span class="title">Controller</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">index</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="comment">//不用——全是漏洞！</span></span><br><span class="line">        <span class="variable">$id</span>=<span class="variable">$_GET</span>[<span class="string">&#x27;id&#x27;</span>];</span><br><span class="line">        <span class="variable">$data</span>=<span class="title class_">Db</span>::<span class="title function_ invoke__">query</span>(<span class="string">&quot;select *from news where id=<span class="subst">$id</span>&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//用一半，有漏洞</span></span><br><span class="line">        <span class="variable">$ids</span>=<span class="variable language_">$this</span>-&gt;request-&gt;<span class="title function_ invoke__">param</span>(<span class="string">&#x27;id&#x27;</span>);</span><br><span class="line">        <span class="comment">// 1、安全点写法——参数通过数组形式传递，可防sql注入</span></span><br><span class="line">        <span class="variable">$data</span>=<span class="title class_">Db</span>::<span class="title function_ invoke__">query</span>(<span class="string">&quot;SELECT * FROM news WHERE id=:ids&quot;</span>,[<span class="string">&#x27;ids&#x27;</span>=&gt;<span class="variable">$ids</span>]);</span><br><span class="line">        <span class="comment">// 2、原始写法</span></span><br><span class="line">        <span class="comment">// $data=Db::query(&quot;select *from news where id=$id&quot;);</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//内置写法，无漏洞（）</span></span><br><span class="line">        <span class="comment">// $id=$this-&gt;request-&gt;param(&#x27;id&#x27;);</span></span><br><span class="line">        <span class="comment">// $data=Db::table(&#x27;news&#x27;)-&gt;where(&#x27;id&#x27;,$id)-&gt;find();</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// return $data;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="title function_ invoke__">json</span>(<span class="variable">$data</span>);</span><br><span class="line">        <span class="comment">// return 123;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -179,7 +184,7 @@
 </blockquote>
 <p><font color="green">自我理解：</font><br>&nbsp;&nbsp;&nbsp;&nbsp;上面说路由的时候说到了如何访问，浅谈框架的时候也说明了内置有 smarty，那么如何使用 smarty呢？</p>
 <p>&nbsp;&nbsp;&nbsp;&nbsp;市面上普遍使用的是 MVC模式，就是下图。模块里面 controller 和 view，每一个控制器都有一个 view 模块，里面就是相对应的 html 前端文件。</p>
-<p><img src="/images/2025/%E7%A7%8B-8-10/php%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE(2)/a_4.png" alt="在这里插入图片描述"></p>
+<p><img src="https://imgproxy.hfqing.top/image/?url=https://p.cldisk.com/star3/origin/9c6e69aa1581aaeaec188fdbb35ef904.png" alt="MVC模式"></p>
 <p>这里举一个 test 模块里 Test.php 控制器里 vv 方法的例子：</p>
 <figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//view：框架上的html与php的配合</span></span><br><span class="line"><span class="keyword">public</span> <span class="function"><span class="keyword">function</span> <span class="title">vv</span>(<span class="params"></span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// 模板变量赋值</span></span><br><span class="line">    <span class="comment">// $this-&gt;assign(&#x27;name&#x27;,&#x27;ThinkPHP&#x27;);</span></span><br><span class="line">    <span class="comment">// $this-&gt;assign(&#x27;email&#x27;,&#x27;thinkphp@qq.com&#x27;);</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 或者批量赋值</span></span><br><span class="line">    <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">assign</span>([</span><br><span class="line">        <span class="string">&#x27;name&#x27;</span>  =&gt; <span class="string">&#x27;ThinkPHP&#x27;</span>,</span><br><span class="line">        <span class="string">&#x27;email&#x27;</span> =&gt; <span class="string">&#x27;thinkphp@qq.com&#x27;</span></span><br><span class="line">    ]);</span><br><span class="line">    <span class="comment">//模板输出:默认为空就是方法名，可修改</span></span><br><span class="line">    <span class="keyword">return</span> <span class="variable language_">$this</span>-&gt;<span class="title function_ invoke__">fetch</span>(<span class="string">&#x27;index&#x27;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -216,15 +221,31 @@
 
 
 
+  <div class="related-wrap md-text" id="comments">
+    <section class='header cmt-title cap theme'>
+      <p>欢迎讨论！不过评论并没有做图床，限制也比较大，担待担待~</p>
+
+    </section>
+    <section class='body cmt-body waline'>
+      
+
+<div id="waline_container" class="waline_thread"><svg class="loading" style="vertical-align:middle;fill:currentColor;overflow:hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg></div>
+
+    </section>
+  </div>
 
 
-<footer class="page-footer footnote"><hr><div class="text"></div></footer>
+
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">轻抚酸</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1">Stellar 1.33.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
 <div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
 <div class="widgets">
 
 
 
-<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%9E%E5%8E%9F%E7%94%9F%E5%BC%80%E5%8F%91"><span class="toc-text">非原生开发</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E6%A8%A1%E6%9D%BF%E5%8A%9F%E8%83%BD"><span class="toc-text">前端模板功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%94%9F"><span class="toc-text">原生</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#code"><span class="toc-text">code</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98"><span class="toc-text">安全问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E6%9D%BF%EF%BC%88%E4%BB%A5smarty%E4%B8%BA%E4%BE%8B%EF%BC%89"><span class="toc-text">第三方模板（以smarty为例）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98-1"><span class="toc-text">安全问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%EF%BC%88%E4%BB%A5-thinkphp-%E4%B8%BA%E4%BE%8B%EF%BC%89"><span class="toc-text">框架（以 thinkphp 为例）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%EF%BC%9A%E8%B7%AF%E7%94%B1%E8%AE%BF%E9%97%AE%EF%BC%88%E4%BB%A5%E5%B0%8F%E7%9A%AE%E4%B8%BA%E4%BE%8B%EF%BC%89"><span class="toc-text">前置：路由访问（以小皮为例）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8A%9F%E8%83%BD"><span class="toc-text">文件上传功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="toc-text">数据库操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MVC%E6%A8%A1%E5%9E%8B"><span class="toc-text">MVC模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98-2"><span class="toc-text">安全问题</span></a></li></ol></li></ol></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a></div></widget>
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9D%9E%E5%8E%9F%E7%94%9F%E5%BC%80%E5%8F%91"><span class="toc-text">非原生开发</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF%E6%A8%A1%E6%9D%BF%E5%8A%9F%E8%83%BD"><span class="toc-text">前端模板功能</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E7%94%9F"><span class="toc-text">原生</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#code"><span class="toc-text">code</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98"><span class="toc-text">安全问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E6%A8%A1%E6%9D%BF%EF%BC%88%E4%BB%A5smarty%E4%B8%BA%E4%BE%8B%EF%BC%89"><span class="toc-text">第三方模板（以smarty为例）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98-1"><span class="toc-text">安全问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%EF%BC%88%E4%BB%A5-thinkphp-%E4%B8%BA%E4%BE%8B%EF%BC%89"><span class="toc-text">框架（以 thinkphp 为例）</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E7%BD%AE%EF%BC%9A%E8%B7%AF%E7%94%B1%E8%AE%BF%E9%97%AE%EF%BC%88%E4%BB%A5%E5%B0%8F%E7%9A%AE%E4%B8%BA%E4%BE%8B%EF%BC%89"><span class="toc-text">前置：路由访问（以小皮为例）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0%E5%8A%9F%E8%83%BD"><span class="toc-text">文件上传功能</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E6%93%8D%E4%BD%9C"><span class="toc-text">数据库操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MVC%E6%A8%A1%E5%9E%8B"><span class="toc-text">MVC模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98-2"><span class="toc-text">安全问题</span></a></li></ol></li></ol></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M8 10.5h8M8 14h5.5M17 3.338A9.95 9.95 0 0 0 12 2C6.477 2 2 6.477 2 12c0 1.6.376 3.112 1.043 4.453c.178.356.237.763.134 1.148l-.595 2.226a1.3 1.3 0 0 0 1.591 1.592l2.226-.596a1.63 1.63 0 0 1 1.149.133A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10c0-1.821-.487-3.53-1.338-5"/></svg><span>参与讨论</span></a></div></widget>
+
+<widget class="widget-wrapper timeline"><div class="widget-header dis-select"><span class="name">说说</span></div><div class="widget-body fs14"><div class="tag-plugin timeline data-service ds-memos" data-api="https://s.dusays.com/api/v1/memo?creatorId=207"></div></div></widget>
 </div></aside><div class='float-panel'>
   <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
@@ -720,6 +741,28 @@
 
 <!-- optional -->
 
+  <script type="module">
+  import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+
+  const el = document.getElementById('waline_container');
+  util.viewportLazyload(el, load_waline, false);
+
+  function load_waline(){
+    if (!el) return;
+
+    utils.css('https://unpkg.com/@waline/client@v3/dist/waline.css');
+    utils.css('https://gcore.jsdelivr.net/npm/@waline/client@3.1/dist/waline-meta.css');
+
+    const path = el.getAttribute('comment_id') ?? decodeURI(window.location.pathname);
+    const waline = init(Object.assign({"js":"https://unpkg.com/@waline/client@v3/dist/waline.js","css":"https://unpkg.com/@waline/client@v3/dist/waline.css","meta_css":"https://gcore.jsdelivr.net/npm/@waline/client@3.1/dist/waline-meta.css","serverURL":"https://comment.hfqing.top","commentCount":true,"pageview":false,"search":false,"reaction":true,"comment":true,"locale":{"level0":"练气","level1":"筑基","level2":"金丹","level3":"元婴","level4":"化神","level5":"合体","level6":"渡劫","level7":"大乘"},"emoji":["https://unpkg.com/@waline/emojis@1.1.0/weibo","https://unpkg.com/@waline/emojis@1.1.0/alus","https://unpkg.com/@waline/emojis@1.1.0/bilibili","https://unpkg.com/@waline/emojis@1.1.0/qq","https://unpkg.com/@waline/emojis@1.1.0/tieba","https://unpkg.com/@waline/emojis@1.1.0/tw-emoji","https://unpkg.com/@waline/emojis@1.1.0/bmoji","https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs"]}, {
+      el: '#waline_container',
+      path: path,
+      
+    }));
+  }
+</script>
+
+
 
 
 <script defer>
@@ -936,5 +979,5 @@
 
 
 <!-- inject -->
-
+<script type="text/javascript" src="/js/custom.js?1"></script><script src="/js/custom.js?1"></script>
 </div></body></html>

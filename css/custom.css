@@ -1,10 +1,16 @@
 
+body, html {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
 /* ===== 整个页面背景：模糊 + 泛白 ===== */
 body::before {
   content: "";
-  position: fixed;
+  position: flex;
+  align-items: center; /* 垂直居中 */
   inset: 0; /* top/right/bottom/left = 0，全屏覆盖 */
-  background: url(/images/background2.jpg) no-repeat center center / cover;
+  background: url(https://imgproxy.hfqing.top/image/?url=https://p.cldisk.com/star3/origin/0d830ac250ef0b7c628354b9aa2b84f8.png) no-repeat center center / cover !important;
   filter: blur(1px) brightness(1.0); /* 模糊+略微提亮 */
   transform: scale(1.1); /* 防止边缘出现空隙 */
   z-index: -2; /* 保证在所有内容后面 */
@@ -22,13 +28,37 @@ body::before {
 
 
 /* ===== 左边栏毛玻璃 ===== */
-.leftbar-container::before {
-  background: rgba(255, 255, 255, 0.6) !important; /* 白色占比更大，文字更清晰 */
-  backdrop-filter: blur(25px) saturate(180%);
-  -webkit-backdrop-filter: blur(25px) saturate(180%);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+.l_left {
+  background: rgba(255, 255, 255, 0.6) ; /* 白色占比更大，文字更清晰 */
+  backdrop-filter: blur(25px) saturate(180%) ;
+  -webkit-backdrop-filter: blur(25px) saturate(180%) ;
+  border-radius: 16px ;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2) ;
+  /* 变长 */
+  display: flex ;
+  min-height: 84vh ;
+  position: relative ;
 }
+/* .l_left footer.footer{
+  position: absolute ;
+  bottom: 0 ;
+}
+.l_left footer.footer{
+  display: flex ;
+  position: absolute ;
+  bottom: 20px ;
+}
+.l_left footer.footer .social-wrap {
+  /* 解决问题的关键：对 social-wrap 应用 Flexbox * /
+  display: flex ;
+}
+footer.footer .social-wrap .social {
+  /* 假设这是图标的样式，比如一个图片或图标字体 * /
+  width: 20px ;
+  height: 20px ;
+} */
+
+
 
 .post-card{
   opacity:0.75;	/*半透明*/
@@ -105,4 +135,17 @@ code{
   content: "";
   inset: 0;
   background: rgba(255, 255, 255, 0.7); /* 泛白层（可以调透明度） */
+}
+
+
+
+/* 隐藏下面的横线 */
+.l_main footer.page-footer{
+  display: none;
+}
+
+
+/* 把左边最下面的footer固定在下面 */
+.float-panel{
+  display: none;
 }
