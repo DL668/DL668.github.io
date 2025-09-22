@@ -1,0 +1,963 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1" theme-name="Stellar" theme-version="1.33.1">
+  
+  
+  <meta name="generator" content="Hexo 7.3.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  <meta name="theme-color" content="#f9fafb">
+  <title>小迪23年-28~31——js简单回顾 - 轻抚酸</title>
+
+  
+    <meta name="description" content="b站小迪23年网安基础课程，28节——31节，js简单回顾">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小迪23年-28~31——js简单回顾">
+<meta property="og:url" content="https://www.hfqing.top/2025/08/02/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-28~31%E2%80%94%E2%80%94js%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE/">
+<meta property="og:site_name" content="轻抚酸">
+<meta property="og:description" content="b站小迪23年网安基础课程，28节——31节，js简单回顾">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hfqing.top/images/avatar2.svg">
+<meta property="article:published_time" content="2025-08-02T15:01:36.000Z">
+<meta property="article:modified_time" content="2025-09-13T08:38:30.694Z">
+<meta property="article:author" content="轻抚酸">
+<meta property="article:tag" content="网课小迪">
+<meta property="article:tag" content="温习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.hfqing.top/images/avatar2.svg">
+  
+  
+  
+  <meta name="keywords" content="网课小迪,温习">
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="轻抚酸" type="application/atom+xml">
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.33.1">
+<link rel="stylesheet" href="/css/custom.css">
+
+
+  
+
+  
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"轻抚酸","sameAs":[],"image":"/images/avatar2.svg"},"dateCreated":"2025-08-02T23:01:36+08:00","dateModified":"2025-09-13T16:38:30+08:00","datePublished":"2025-08-02T23:01:36+08:00","description":"b站小迪23年网安基础课程，28节——31节，js简单回顾","headline":"小迪23年-28~31——js简单回顾","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.hfqing.top/2025/08/02/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-28~31%E2%80%94%E2%80%94js%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE/"},"publisher":{"@type":"Organization","name":"轻抚酸","sameAs":[],"image":"/images/avatar2.svg","logo":{"@type":"ImageObject","url":"/images/avatar2.svg"}},"url":"https://www.hfqing.top/2025/08/02/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-28~31%E2%80%94%E2%80%94js%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE/","keywords":"网课小迪, 温习","image":[]}</script>
+  <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'">
+</head>
+<body>
+
+<div class="l_body content" id="start" layout="post" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/images/avatar2.svg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">轻抚酸</div><div class="sub normal cap">从分享欲开始</div><div class="sub hover cap" style="opacity:0"> 我即FW！</div></a></div></header>
+
+<div class="nav-area">
+
+<nav class="menu dis-select"><a class="nav-item active" title="博客" href="/" style="color:#1BCDFC"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5.879 2.879C5 3.757 5 5.172 5 8v8c0 2.828 0 4.243.879 5.121C6.757 22 8.172 22 11 22h2c2.828 0 4.243 0 5.121-.879C19 20.243 19 18.828 19 16V8c0-2.828 0-4.243-.879-5.121C17.243 2 15.828 2 13 2h-2c-2.828 0-4.243 0-5.121.879M8.25 17a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75M9 12.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5zM8.25 9A.75.75 0 0 1 9 8.25h6a.75.75 0 0 1 0 1.5H9A.75.75 0 0 1 8.25 9" clip-rule="evenodd"/><path fill="currentColor" d="M5.235 4.058C5 4.941 5 6.177 5 8v8c0 1.823 0 3.058.235 3.942L5 19.924c-.975-.096-1.631-.313-2.121-.803C2 18.243 2 16.828 2 14v-4c0-2.829 0-4.243.879-5.121c.49-.49 1.146-.707 2.121-.803zm13.53 15.884C19 19.058 19 17.822 19 16V8c0-1.823 0-3.059-.235-3.942l.235.018c.975.096 1.631.313 2.121.803C22 5.757 22 7.17 22 9.999v4c0 2.83 0 4.243-.879 5.122c-.49.49-1.146.707-2.121.803z" opacity=".5"/></svg></a><a class="nav-item" title="友链" href="/friends/" style="color:#F44336"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m13.629 20.472l-.542.916c-.483.816-1.69.816-2.174 0l-.542-.916c-.42-.71-.63-1.066-.968-1.262c-.338-.197-.763-.204-1.613-.219c-1.256-.021-2.043-.098-2.703-.372a5 5 0 0 1-2.706-2.706C2 14.995 2 13.83 2 11.5v-1c0-3.273 0-4.91.737-6.112a5 5 0 0 1 1.65-1.651C5.59 2 7.228 2 10.5 2h3c3.273 0 4.91 0 6.113.737a5 5 0 0 1 1.65 1.65C22 5.59 22 7.228 22 10.5v1c0 2.33 0 3.495-.38 4.413a5 5 0 0 1-2.707 2.706c-.66.274-1.447.35-2.703.372c-.85.015-1.275.022-1.613.219c-.338.196-.548.551-.968 1.262" opacity=".5"/><path fill="currentColor" d="M10.99 14.308c-1.327-.978-3.49-2.84-3.49-4.593c0-2.677 2.475-3.677 4.5-1.609c2.025-2.068 4.5-1.068 4.5 1.609c0 1.752-2.163 3.615-3.49 4.593c-.454.335-.681.502-1.01.502c-.329 0-.556-.167-1.01-.502"/></svg></a></nav>
+</div>
+<div class="widgets">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+
+<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span><a class="cap-action" id="rss" title="Subscribe" href="atom.xml"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19q0-.825.588-1.412T5 17q.825 0 1.413.588T7 19q0 .825-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1q-1.65-1.65-3.762-2.687T4.6 7.1q-.65-.075-1.125-.512T3 5.5q0-.65.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337q2.05 2.05 3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35q-.85-.85-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062q1.25 1.25 2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/></svg></a></div><div class="widget-body fs14"><a class="item title" href="/2025/07/25/kali%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5-%E9%80%89%E6%8B%A9%E5%B9%B6%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%8C%85-%E4%B8%80%E6%AD%A5%E5%88%B0%E4%BD%8D/"><span class="title">kali安装失败-选择并安装软件包-一步到位</span></a><a class="item title" href="/2025/08/01/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-22~27%E2%80%94%E2%80%94php%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE%EF%BC%881%EF%BC%89/"><span class="title">小迪23年-22~27——php简单回顾（1）</span></a><a class="item title" href="/2025/08/02/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-22~27%E2%80%94%E2%80%94php%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE%EF%BC%882%EF%BC%89/"><span class="title">小迪23年-22~27——php简单回顾（2）</span></a><a class="item title" href="/2025/08/02/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-28~31%E2%80%94%E2%80%94js%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE/"><span class="title">小迪23年-28~31——js简单回顾</span></a><a class="item title" href="/2025/08/08/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-32~40%E2%80%94%E2%80%94java%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE%EF%BC%881%EF%BC%89/"><span class="title">小迪23年-32~40——java简单回顾（1）</span></a></div></widget>
+</div>
+<footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://github.com/DL668" target="_blank" rel="external nofollow noopener noreferrer"><img src="/images/github2.svg"/></a><a class="social" href="https://qm.qq.com/cgi-bin/qm/qr?k=jBzttOhbydvSf_PcHQbAokSpvSrBj9jC" target="_blank" rel="external nofollow noopener noreferrer"><img src="/images/qq.svg"/></a></div></footer>
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E8%AF%BE%E5%A0%82/">课堂</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/%E8%AF%BE%E5%A0%82/%E7%AC%94%E8%AE%B0/">笔记</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-08-02T15:01:36.000Z">2025-08-02</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-09-13T08:38:30.694Z">2025-09-13</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>小迪23年-28~31——js简单回顾</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><p>b站小迪23年网安基础课程，28节——31节，js简单回顾</p>
+<span id="more"></span>
+
+<h1 id="前端-js开发"><a href="#前端-js开发" class="headerlink" title="前端-js开发"></a>前端-js开发</h1><blockquote>
+<p>课堂完结后欲复习巩固也方便后续-重游-故写此篇<br>从实现功能过渡到涉及的相关知识点</p>
+</blockquote>
+<table><tr><td bgcolor=DarkSeaGreen>知识点</td></tr></table>
+
+<p><strong>1、</strong> JS 是前端语言，是可以被浏览器“看到”的，当然也可以被修改啊，被浏览器禁用网页的 JS 功能啊之类的。所以一般都是前后端分离开发，前端只负责显示与提醒用户。</p>
+<p><strong>2、</strong> JS 是可以在浏览器里调试的，断点之类的都行，浏览器里也有控制台可以执行命令。</p>
+<p><strong>3、</strong> 浏览器不可能看到所有的 JS 文件，但是断点也带来了其他可能，只要断在你想知道参数的地方，那么没有显示的 JS 文件也不行影响到你，毕竟你只需要它们运行而非一定得拿到源码。</p>
+<h2 id="登录验证"><a href="#登录验证" class="headerlink" title="登录验证"></a>登录验证</h2><blockquote>
+<p>简单流程：（最初实验版）前端 js 发送用户名和密码给后端，后端判断是否正确后返回参数，js依据参数决定是否进行页面跳转与弹窗</p>
+</blockquote>
+<p><strong><font color="green">分析问题：</font></strong></p>
+<p><strong>1、</strong> 前端语言是可以看到的，是可以被改变的，所以不能给前端跳转页面的权力，只能做提醒，不然会导致安全问题。</p>
+<blockquote>
+<p>前端语言应只供展示与简单提醒</p>
+</blockquote>
+<p><em><strong>Code:</strong></em><br>前端 js 部分代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- </span><br><span class="line"></span><br><span class="line">采用js传输，php验证</span><br><span class="line"></span><br><span class="line"> --&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">        &lt;h3&gt;用户登录&lt;/h3&gt;</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;label <span class="keyword">for</span>=<span class="string">&quot;username&quot;</span>&gt;用户名：&lt;/label&gt;</span><br><span class="line">            &lt;input type=<span class="string">&quot;text&quot;</span> <span class="class"><span class="keyword">class</span>=&quot;<span class="title">username</span>&quot; <span class="title">name</span>=&quot;<span class="title">username</span>&quot; <span class="title">required</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;/<span class="title">div</span>&gt;&lt;<span class="title">br</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="class">            &lt;<span class="title">label</span> <span class="title">for</span>=&quot;<span class="title">password</span>&quot;&gt;密码：&lt;/<span class="title">label</span>&gt;</span></span><br><span class="line"><span class="class">            &lt;<span class="title">input</span> <span class="title">type</span>=&quot;<span class="title">password</span>&quot; <span class="title">class</span>=&quot;<span class="title">password</span>&quot; <span class="title">name</span>=&quot;<span class="title">password</span>&quot; <span class="title">required</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;/<span class="title">div</span>&gt;&lt;<span class="title">br</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">button</span>&gt;登录&lt;/<span class="title">button</span>&gt;</span></span><br><span class="line"><span class="class">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">&lt;!-- //导入<span class="title">jquery</span> --&gt;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">&lt;<span class="title">script</span> <span class="title">src</span>=&quot;./<span class="title">js</span>/<span class="title">js</span>/<span class="title">jquery</span>-3.7.1.<span class="title">js</span>&quot;&gt;&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="class">&lt;!-- 都是键值对！！！ --&gt;</span></span><br><span class="line"><span class="class">&lt;<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="class">	$(&#x27;<span class="title">button</span>&#x27;).<span class="title">click</span>(<span class="title">function</span>()</span>&#123;</span><br><span class="line">		$.<span class="title function_ invoke__">ajax</span>(&#123;</span><br><span class="line">			<span class="attr">url</span>: <span class="string">&quot;check_login.php&quot;</span>,</span><br><span class="line">			<span class="attr">data</span>: &#123;</span><br><span class="line">				<span class="attr">user</span>:$(<span class="string">&#x27;.username&#x27;</span>).<span class="title function_ invoke__">val</span>(),</span><br><span class="line">				passwd:$(<span class="string">&#x27;.password&#x27;</span>).<span class="title function_ invoke__">val</span>()</span><br><span class="line">			&#125;,</span><br><span class="line">			type: <span class="string">&quot;POST&quot;</span>,</span><br><span class="line">			dataType: <span class="string">&quot;json&quot;</span>,</span><br><span class="line">			success: <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">				console.<span class="title function_ invoke__">log</span>(data);</span><br><span class="line">				<span class="keyword">if</span>(data.info==<span class="number">1</span>)&#123;</span><br><span class="line">					<span class="title function_ invoke__">alert</span>(<span class="string">&#x27;登陆成功！&#x27;</span>);</span><br><span class="line">					<span class="comment">// location.href=&quot;index.php&quot;;</span></span><br><span class="line">					<span class="comment">/**</span></span><br><span class="line"><span class="comment">					 * 安全漏洞出现，原因：前端代码不可进行操作，只需要提示就可以了</span></span><br><span class="line"><span class="comment">					 * </span></span><br><span class="line"><span class="comment">					 * 小写，哦~*/</span></span><br><span class="line">				&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">					console.<span class="title function_ invoke__">log</span>(<span class="string">&#x27;登陆失败！&#x27;</span>);</span><br><span class="line">				&#125;</span><br><span class="line">				</span><br><span class="line">			&#125;,</span><br><span class="line">			error: <span class="function"><span class="keyword">function</span>(<span class="params">text</span>) </span>&#123;</span><br><span class="line">				<span class="title function_ invoke__">alert</span>(<span class="string">&#x27;登陆失败！&#x27;</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;);</span><br><span class="line">	&#125;);</span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h2><blockquote>
+<p>简单流程：前端 js 判断文件格式等是否正确，然后发送给后端 php 进一步处理文件。<br>简单模拟了已下前端部分，并没有写后端 php。</p>
+</blockquote>
+<p><strong><font color="green">分析问题：</font></strong></p>
+<p><strong>1、</strong> 前端先做第一步判断减轻服务器压力，但是也容易被绕过，所以后端还是得判断一次（也许可以优化法子？）</p>
+<p><strong>2、</strong> 但是并没有赋予前端任何权利并没有安全问题，压力给到后端。</p>
+<p><em><strong>Code：</strong></em><br>前端部分 js 代码如下：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span>=&quot;<span class="title">upload</span>-<span class="title">container</span>&quot;&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">h2</span>&gt;上传文件&lt;/<span class="title">h2</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;<span class="title">form</span> <span class="title">action</span>=&quot;<span class="title">upload</span>.<span class="title">php</span>&quot; <span class="title">method</span>=&quot;<span class="title">post</span>&quot; <span class="title">enctype</span>=&quot;<span class="title">multipart</span>/<span class="title">form</span>-<span class="title">data</span>&quot;&gt;</span></span><br><span class="line"><span class="class">            &lt;<span class="title">input</span> <span class="title">type</span>=&quot;<span class="title">file</span>&quot; <span class="title">name</span>=&quot;<span class="title">fileToUpload</span>&quot; <span class="title">id</span>=&quot;<span class="title">file</span>&quot;  <span class="title">onchange</span>=&quot;<span class="title">check_upload</span>(<span class="title">this</span>.<span class="title">value</span>)&quot;&gt;</span></span><br><span class="line"><span class="class">            &lt;<span class="title">button</span> <span class="title">type</span>=&quot;<span class="title">submit</span>&quot;&gt;上传文件&lt;/<span class="title">button</span>&gt;</span></span><br><span class="line"><span class="class">        &lt;/<span class="title">form</span>&gt;</span></span><br><span class="line"><span class="class">    &lt;/<span class="title">div</span>&gt;</span></span><br><span class="line"><span class="class">&lt;/<span class="title">body</span>&gt;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">&lt;!-- 使用<span class="title">js</span>来实现前端的文件格式过滤 --&gt;</span></span><br><span class="line"><span class="class">&lt;<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="class">    //文件后缀白名单</span></span><br><span class="line"><span class="class">    <span class="title">let</span> <span class="title">list_write</span>=[&#x27;<span class="title">jpg</span>&#x27;,&#x27;<span class="title">png</span>&#x27;,&#x27;<span class="title">gif</span>&#x27;,&#x27;<span class="title">jpeg</span>&#x27;,&#x27;<span class="title">webp</span>&#x27;];</span></span><br><span class="line"><span class="class">    //文件上传时发生改变触发方法</span></span><br><span class="line"><span class="class">    <span class="title">function</span> <span class="title">check_upload</span>(<span class="title">file_name</span>)</span>&#123;</span><br><span class="line">        <span class="comment">//取出后缀</span></span><br><span class="line">        let idx=file_name.<span class="title function_ invoke__">lastIndexOf</span>(<span class="string">&#x27;.&#x27;</span>);</span><br><span class="line">        let val=file_name.<span class="title function_ invoke__">substring</span>(idx+<span class="number">1</span>,file_name.length);</span><br><span class="line">        <span class="keyword">if</span>(list_write.<span class="title function_ invoke__">indexOf</span>(val)!=-<span class="number">1</span>)&#123;</span><br><span class="line">            console.<span class="title function_ invoke__">log</span>(<span class="string">&#x27;文件格式无误&#x27;</span>);</span><br><span class="line">            <span class="comment">//将文件发送后端……</span></span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="comment">//刷新网页取消文件输入</span></span><br><span class="line">            location.<span class="title function_ invoke__">reload</span>(<span class="literal">true</span>);</span><br><span class="line">            <span class="title function_ invoke__">alert</span>(<span class="string">&#x27;文件格式有误&#x27;</span>);    </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="打包器webpack"><a href="#打包器webpack" class="headerlink" title="打包器webpack"></a>打包器webpack</h2><blockquote>
+<p>基本的目录结构如下：</p>
+<hr>
+<p>D:\VSCODE\WEBPACK-DEMO<br>│ package.json（版本控制及脚本配置）<br>│ webpack.config.js（配置文件）<br>│<br>├─dist（打包后的成品code）<br>├─node_modules（依赖包）<br>└─src（存自己写的code）<br>&nbsp;&nbsp;&nbsp;├─index.html<br>&nbsp;&nbsp;&nbsp;└─index.js</p>
+</blockquote>
+<p><strong><font color="green">接下来通过简单使用来复习功能，并引入其作用。</font></strong></p>
+<blockquote>
+<p>开始之前先复习一下其概念：<br>Webpack 是一个现代 JavaScript 应用程序的静态模块打包工具。它分析项目结构，找到 JavaScript 模块以及其他一些浏览器不能直接运行的扩展语言（如 Scss，TypeScript 等），并将其转换和打包为合适的格式供浏览器使用。</p>
+<hr>
+<p>然后使其使用与感悟：<br>就举个最简单的 js 方面的例子：一个html页面可能需要引入非常多的 js 文件，不但太多了不好维护，也会导致访问的速度变慢，为了解决这一问题，可以用打包器 webpack 将任意多个 js 文件打包成一个或几个 js 文件。流程大致如下：<br>1、打包器分析 js 文件之间的依赖关系（通过<code>import</code>&#x2F;<code>require</code>语句）<br>2、构建依赖图<br>3、打包、优化、合并成一&#x2F;几个 JS 文件</p>
+</blockquote>
+<p><strong>一、</strong> 新建文件夹 ‘js’，存放两个 js 文件<br>代码分别如下:</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">divide</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a-b;</span><br><span class="line">&#125;</span><br><span class="line">export <span class="keyword">default</span> divide;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export <span class="keyword">default</span> <span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">a,b</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a+b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>二、</strong> 在 src 目录下新建一个 JS 文件用于联系多个 JS 文件（上面两）</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import one <span class="keyword">from</span> <span class="string">&#x27;../js/_1&#x27;</span>;</span><br><span class="line">import two <span class="keyword">from</span> <span class="string">&#x27;../js/_2&#x27;</span>;</span><br><span class="line"></span><br><span class="line">console.<span class="title function_ invoke__">log</span>(<span class="title function_ invoke__">one</span>(<span class="number">1</span>,<span class="number">2</span>))</span><br><span class="line">console.<span class="title function_ invoke__">log</span>(<span class="title function_ invoke__">two</span>(<span class="number">1</span>,<span class="number">2</span>))</span><br></pre></td></tr></table></figure>
+
+<p><strong>三、</strong> 配置 webpack.config.js 文件如下</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="variable constant_">path</span> = <span class="keyword">require</span>(<span class="string">&#x27;path&#x27;</span>);</span><br><span class="line"></span><br><span class="line">module.exports = &#123;</span><br><span class="line">    mode:<span class="string">&quot;development&quot;</span>,<span class="comment">//开发模式</span></span><br><span class="line">    <span class="comment">// mode:&quot;production&quot; 生产模式</span></span><br><span class="line">    entry: <span class="string">&#x27;./src/index.js&#x27;</span>,<span class="comment">//入口文件</span></span><br><span class="line">    output: &#123;</span><br><span class="line">        filename: <span class="string">&#x27;bundle.js&#x27;</span>,<span class="comment">//结果文件</span></span><br><span class="line">        path: path.<span class="title function_ invoke__">resolve</span>(__dirname, <span class="string">&#x27;dist&#x27;</span>)<span class="comment">//结果文件的位置</span></span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<table><tr><td bgcolor=DarkSeaGreen>知识点</td></tr></table>
+
+<p><strong>1、</strong> 上面配置 code 中的 mode<br>&nbsp;&nbsp;&nbsp;&nbsp;开发模式用于网站开发过程中，生产模式用于网站部署后。至于弄混会咋样，如图，源码漏泄给浏览器</p>
+<p><img src="https://imgproxy.hfqing.top/image/?url=https://p.cldisk.com/star3/origin/dd7941805cd2e10a8bcdbb7e99ef8d9e.png" alt="源码泄露"></p>
+<p><strong>四、</strong> 执行打包命令</p>
+<blockquote>
+<p>首先在 <code>package.json</code>文件里添加下面代码，然后移动终端的路径到webpack根目录下，运行命令<code>npm run build</code></p>
+</blockquote>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;scripts&quot;</span>:&#123;</span><br><span class="line">    <span class="string">&quot;build&quot;</span>:<span class="string">&quot;webpack&quot;</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p><em><strong>这里也贴上两种模式产生的结果 JS 文件代价量的区别</strong></em></p>
+<p><strong>生产模式code：</strong></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">(()=&gt;&#123;<span class="string">&quot;use strict&quot;</span>;console.<span class="title function_ invoke__">log</span>(<span class="number">1</span>-<span class="number">2</span>),console.<span class="title function_ invoke__">log</span>(<span class="number">3</span>)&#125;)();</span><br></pre></td></tr></table></figure>
+
+<p><strong>开发模式code：</strong><br><del><em>是的，1行和100行的区别</em></del></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * ATTENTION: The &quot;eval&quot; devtool has been used (maybe by default in mode: &quot;development&quot;).</span></span><br><span class="line"><span class="comment"> * This devtool is neither made for production nor for readable output files.</span></span><br><span class="line"><span class="comment"> * It uses &quot;eval()&quot; calls to create a separate source file in the browser devtools.</span></span><br><span class="line"><span class="comment"> * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)</span></span><br><span class="line"><span class="comment"> * or disable the default devtool with &quot;devtool: false&quot;.</span></span><br><span class="line"><span class="comment"> * If you are looking for production-ready output files, see mode: &quot;production&quot; (https://webpack.js.org/configuration/mode/).</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/******/</span> (() =&gt; &#123; <span class="comment">// webpackBootstrap</span></span><br><span class="line"><span class="comment">/******/</span> 	<span class="string">&quot;use strict&quot;</span>;</span><br><span class="line"><span class="comment">/******/</span> 	<span class="keyword">var</span> __webpack_modules__ = (&#123;</span><br><span class="line"></span><br><span class="line"><span class="comment">/***/</span> <span class="string">&quot;./js/_1.js&quot;</span>:</span><br><span class="line"><span class="comment">/*!******************!*\</span></span><br><span class="line"><span class="comment">  !*** ./js/_1.js ***!</span></span><br><span class="line"><span class="comment">  \******************/</span></span><br><span class="line"><span class="comment">/***/</span> ((__unused_webpack_module, __webpack_exports__, __webpack_require__) =&gt; &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">eval</span>(<span class="string">&quot;&#123;__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, &#123;\n/* harmony export */   \&quot;default\&quot;: () =&gt; (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ &#125;);\nfunction divide(a,b)&#123;\r\n    return a-b;\r\n&#125;\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (divide);\n\n//# sourceURL=webpack:///./js/_1.js?\n&#125;&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/***/</span> &#125;),</span><br><span class="line"></span><br><span class="line"><span class="comment">/***/</span> <span class="string">&quot;./js/_2.js&quot;</span>:</span><br><span class="line"><span class="comment">/*!******************!*\</span></span><br><span class="line"><span class="comment">  !*** ./js/_2.js ***!</span></span><br><span class="line"><span class="comment">  \******************/</span></span><br><span class="line"><span class="comment">/***/</span> ((__unused_webpack_module, __webpack_exports__, __webpack_require__) =&gt; &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">eval</span>(<span class="string">&quot;&#123;__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, &#123;\n/* harmony export */   \&quot;default\&quot;: () =&gt; (/* binding */ add)\n/* harmony export */ &#125;);\nfunction add(a,b)&#123;\r\n    return a+b;\r\n&#125;\n\n//# sourceURL=webpack:///./js/_2.js?\n&#125;&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/***/</span> &#125;),</span><br><span class="line"></span><br><span class="line"><span class="comment">/***/</span> <span class="string">&quot;./src/index.js&quot;</span>:</span><br><span class="line"><span class="comment">/*!**********************!*\</span></span><br><span class="line"><span class="comment">  !*** ./src/index.js ***!</span></span><br><span class="line"><span class="comment">  \**********************/</span></span><br><span class="line"><span class="comment">/***/</span> ((__unused_webpack_module, __webpack_exports__, __webpack_require__) =&gt; &#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">eval</span>(<span class="string">&quot;&#123;__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _js_1__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../js/_1 */ \&quot;./js/_1.js\&quot;);\n/* harmony import */ var _js_2__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../js/_2 */ \&quot;./js/_2.js\&quot;);\n\r\n\r\n\r\nconsole.log((0,_js_1__WEBPACK_IMPORTED_MODULE_0__[\&quot;default\&quot;])(1,2))\r\nconsole.log((0,_js_2__WEBPACK_IMPORTED_MODULE_1__[\&quot;default\&quot;])(1,2))\n\n//# sourceURL=webpack:///./src/index.js?\n&#125;&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/***/</span> &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">/******/</span> 	&#125;);</span><br><span class="line"><span class="comment">/************************************************************************/</span></span><br><span class="line"><span class="comment">/******/</span> 	<span class="comment">// The module cache</span></span><br><span class="line"><span class="comment">/******/</span> 	<span class="keyword">var</span> __webpack_module_cache__ = &#123;&#125;;</span><br><span class="line"><span class="comment">/******/</span> 	</span><br><span class="line"><span class="comment">/******/</span> 	<span class="comment">// The require function</span></span><br><span class="line"><span class="comment">/******/</span> 	<span class="function"><span class="keyword">function</span> <span class="title">__webpack_require__</span>(<span class="params">moduleId</span>) </span>&#123;</span><br><span class="line"><span class="comment">/******/</span> 		<span class="comment">// Check if module is in cache</span></span><br><span class="line"><span class="comment">/******/</span> 		<span class="keyword">var</span> cachedModule = __webpack_module_cache__[moduleId];</span><br><span class="line"><span class="comment">/******/</span> 		<span class="keyword">if</span> (cachedModule !== undefined) &#123;</span><br><span class="line"><span class="comment">/******/</span> 			<span class="keyword">return</span> cachedModule.exports;</span><br><span class="line"><span class="comment">/******/</span> 		&#125;</span><br><span class="line"><span class="comment">/******/</span> 		<span class="comment">// Create a new module (and put it into the cache)</span></span><br><span class="line"><span class="comment">/******/</span> 		<span class="keyword">var</span> module = __webpack_module_cache__[moduleId] = &#123;</span><br><span class="line"><span class="comment">/******/</span> 			<span class="comment">// no module.id needed</span></span><br><span class="line"><span class="comment">/******/</span> 			<span class="comment">// no module.loaded needed</span></span><br><span class="line"><span class="comment">/******/</span> 			exports: &#123;&#125;</span><br><span class="line"><span class="comment">/******/</span> 		&#125;;</span><br><span class="line"><span class="comment">/******/</span> 	</span><br><span class="line"><span class="comment">/******/</span> 		<span class="comment">// Execute the module function</span></span><br><span class="line"><span class="comment">/******/</span> 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);</span><br><span class="line"><span class="comment">/******/</span> 	</span><br><span class="line"><span class="comment">/******/</span> 		<span class="comment">// Return the exports of the module</span></span><br><span class="line"><span class="comment">/******/</span> 		<span class="keyword">return</span> module.exports;</span><br><span class="line"><span class="comment">/******/</span> 	&#125;</span><br><span class="line"><span class="comment">/******/</span> 	</span><br><span class="line"><span class="comment">/************************************************************************/</span></span><br><span class="line"><span class="comment">/******/</span> 	<span class="comment">/* webpack/runtime/define property getters */</span></span><br><span class="line"><span class="comment">/******/</span> 	(() =&gt; &#123;</span><br><span class="line"><span class="comment">/******/</span> 		<span class="comment">// define getter functions for harmony exports</span></span><br><span class="line"><span class="comment">/******/</span> 		__webpack_require__.d = (exports, definition) =&gt; &#123;</span><br><span class="line"><span class="comment">/******/</span> 			<span class="keyword">for</span>(<span class="keyword">var</span> key in definition) &#123;</span><br><span class="line"><span class="comment">/******/</span> 				<span class="keyword">if</span>(__webpack_require__.<span class="title function_ invoke__">o</span>(definition, key) &amp;&amp; !__webpack_require__.<span class="title function_ invoke__">o</span>(exports, key)) &#123;</span><br><span class="line"><span class="comment">/******/</span> 					Object.<span class="title function_ invoke__">defineProperty</span>(exports, key, &#123; <span class="attr">enumerable</span>: <span class="literal">true</span>, <span class="attr">get</span>: definition[key] &#125;);</span><br><span class="line"><span class="comment">/******/</span> 				&#125;</span><br><span class="line"><span class="comment">/******/</span> 			&#125;</span><br><span class="line"><span class="comment">/******/</span> 		&#125;;</span><br><span class="line"><span class="comment">/******/</span> 	&#125;)();</span><br><span class="line"><span class="comment">/******/</span> 	</span><br><span class="line"><span class="comment">/******/</span> 	<span class="comment">/* webpack/runtime/hasOwnProperty shorthand */</span></span><br><span class="line"><span class="comment">/******/</span> 	(() =&gt; &#123;</span><br><span class="line"><span class="comment">/******/</span> 		__webpack_require__.o = (obj, prop) =&gt; (Object.prototype.hasOwnProperty.<span class="title function_ invoke__">call</span>(obj, prop))</span><br><span class="line"><span class="comment">/******/</span> 	&#125;)();</span><br><span class="line"><span class="comment">/******/</span> 	</span><br><span class="line"><span class="comment">/******/</span> 	<span class="comment">/* webpack/runtime/make namespace object */</span></span><br><span class="line"><span class="comment">/******/</span> 	(() =&gt; &#123;</span><br><span class="line"><span class="comment">/******/</span> 		<span class="comment">// define __esModule on exports</span></span><br><span class="line"><span class="comment">/******/</span> 		__webpack_require__.r = (exports) =&gt; &#123;</span><br><span class="line"><span class="comment">/******/</span> 			<span class="keyword">if</span>(typeof Symbol !== <span class="string">&#x27;undefined&#x27;</span> &amp;&amp; Symbol.toStringTag) &#123;</span><br><span class="line"><span class="comment">/******/</span> 				Object.<span class="title function_ invoke__">defineProperty</span>(exports, Symbol.toStringTag, &#123; <span class="attr">value</span>: <span class="string">&#x27;Module&#x27;</span> &#125;);</span><br><span class="line"><span class="comment">/******/</span> 			&#125;</span><br><span class="line"><span class="comment">/******/</span> 			Object.<span class="title function_ invoke__">defineProperty</span>(exports, <span class="string">&#x27;__esModule&#x27;</span>, &#123; <span class="attr">value</span>: <span class="literal">true</span> &#125;);</span><br><span class="line"><span class="comment">/******/</span> 		&#125;;</span><br><span class="line"><span class="comment">/******/</span> 	&#125;)();</span><br><span class="line"><span class="comment">/******/</span> 	</span><br><span class="line"><span class="comment">/************************************************************************/</span></span><br><span class="line"><span class="comment">/******/</span> 	</span><br><span class="line"><span class="comment">/******/</span> 	<span class="comment">// startup</span></span><br><span class="line"><span class="comment">/******/</span> 	<span class="comment">// Load entry module and return exports</span></span><br><span class="line"><span class="comment">/******/</span> 	<span class="comment">// This entry module can&#x27;t be inlined because the eval devtool is used.</span></span><br><span class="line"><span class="comment">/******/</span> 	<span class="keyword">var</span> __webpack_exports__ = <span class="title function_ invoke__">__webpack_require__</span>(<span class="string">&quot;./src/index.js&quot;</span>);</span><br><span class="line"><span class="comment">/******/</span> 	</span><br><span class="line"><span class="comment">/******/</span> &#125;)()</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="express实现服务端"><a href="#express实现服务端" class="headerlink" title="express实现服务端"></a>express实现服务端</h2><blockquote>
+<p>服务器，也就是访问特定ip与端口会返回特定数据<br>由此<br>1、模拟网页刷新（渲染特定网页）<br>2、模拟网页传输用户名密码需要连接数据库并返回结果<br>3、依据get、post方式不同返回不同（路由）</p>
+</blockquote>
+<p>由于是简单模拟，所以都集合在了一个<code>server.js</code>里，还有一个返回&#x2F;渲染网页用的html文件。</p>
+<p><strong>html 文件为渲染用登录页面，code：</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">&quot;zh-CN&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">&quot;UTF-8&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>登录页面<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="language-css"></span></span><br><span class="line"><span class="language-css">        <span class="selector-tag">body</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">display</span>: flex;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">justify-content</span>: center;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">align-items</span>: center;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">height</span>: <span class="number">100vh</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">font-family</span>: sans-serif;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="selector-class">.login-form</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">padding</span>: <span class="number">20px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ccc</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">border-radius</span>: <span class="number">8px</span>;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">width</span>: <span class="number">300px</span>;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">        <span class="selector-class">.error-message</span> &#123;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">color</span>: red;</span></span><br><span class="line"><span class="language-css">            <span class="attribute">display</span>: none;</span></span><br><span class="line"><span class="language-css">        &#125;</span></span><br><span class="line"><span class="language-css">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">&quot;http://127.0.0.1:3001/login&quot;</span> <span class="attr">method</span>=<span class="string">&quot;POST&quot;</span> &gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">h3</span>&gt;</span>用户登录<span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;username&quot;</span>&gt;</span>用户名：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;text&quot;</span> <span class="attr">id</span>=<span class="string">&quot;username&quot;</span> <span class="attr">name</span>=<span class="string">&quot;username&quot;</span> <span class="attr">required</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">&quot;password&quot;</span>&gt;</span>密码：<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;password&quot;</span> <span class="attr">id</span>=<span class="string">&quot;password&quot;</span> <span class="attr">name</span>=<span class="string">&quot;password&quot;</span> <span class="attr">required</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;submit&quot;</span> <span class="attr">value</span>=<span class="string">&quot;登录&quot;</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong><code>server.js</code>文件code：</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 引入模块</span></span><br><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">&#x27;express&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> bodyParser = <span class="built_in">require</span>(<span class="string">&#x27;body-parser&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> mysql = <span class="built_in">require</span>(<span class="string">&#x27;mysql&#x27;</span>);</span><br><span class="line"><span class="comment">// 创建一个express应用</span></span><br><span class="line"><span class="keyword">const</span> app = <span class="title function_">express</span>();</span><br><span class="line"><span class="comment">// 定义端口号</span></span><br><span class="line"><span class="keyword">const</span> port = <span class="number">3001</span>;</span><br><span class="line"><span class="comment">// 提供静态文件服务</span></span><br><span class="line"><span class="comment">// app.use(express.static(&#x27;public&#x27;));</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 解析 application/x-www-form-urlencoded 数据</span></span><br><span class="line">app.<span class="title function_">use</span>(bodyParser.<span class="title function_">urlencoded</span>(&#123; <span class="attr">extended</span>: <span class="literal">false</span> &#125;));</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 初始页面</span></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;/&#x27;</span>,<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// res.send(&#x27;GET请求成功！&#x27;);</span></span><br><span class="line">    <span class="comment">//还可以渲染（返回）html文件！！</span></span><br><span class="line">    res.<span class="title function_">sendFile</span>(__dirname+<span class="string">&quot;/html/login.html&quot;</span>);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 1、get 方式传输表单数据</span></span><br><span class="line">app.<span class="title function_">get</span>(<span class="string">&#x27;/login&#x27;</span>,<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">//参数获取</span></span><br><span class="line">    <span class="keyword">const</span> u=req.<span class="property">query</span>.<span class="property">username</span>;</span><br><span class="line">    <span class="keyword">const</span> p=req.<span class="property">query</span>.<span class="property">password</span>;</span><br><span class="line">    <span class="comment">//连接数据库……</span></span><br><span class="line">    <span class="comment">//判断</span></span><br><span class="line">    <span class="keyword">if</span>(u==<span class="string">&quot;admin&quot;</span> &amp;&amp; p==<span class="string">&quot;123456&quot;</span>)&#123;</span><br><span class="line">        res.<span class="title function_">send</span>(<span class="string">&quot;欢迎管理员！get&quot;</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        res.<span class="title function_">send</span>(<span class="string">&quot;闲杂人等不得入内！get&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 2、post 方式传输表单数据</span></span><br><span class="line">app.<span class="title function_">post</span>(<span class="string">&#x27;/login&#x27;</span>,<span class="function">(<span class="params">req, res</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">//参数获取</span></span><br><span class="line">    <span class="keyword">const</span> u=req.<span class="property">body</span>.<span class="property">username</span>;</span><br><span class="line">    <span class="keyword">const</span> p=req.<span class="property">body</span>.<span class="property">password</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//数据库设置</span></span><br><span class="line">    <span class="keyword">const</span> connection = mysql.<span class="title function_">createConnection</span>(&#123;</span><br><span class="line">      host     : <span class="string">&#x27;localhost&#x27;</span>,</span><br><span class="line">      user     : <span class="string">&#x27;root&#x27;</span>,</span><br><span class="line">      password : <span class="string">&#x27;password&#x27;</span>,</span><br><span class="line">      database : <span class="string">&#x27;user_all&#x27;</span>,</span><br><span class="line">      port     :<span class="string">&#x27;3307&#x27;</span></span><br><span class="line">    &#125;);</span><br><span class="line">     <span class="comment">//连接数据库</span></span><br><span class="line">    connection.<span class="title function_">connect</span>(<span class="function">(<span class="params">error</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(error)&#123;</span><br><span class="line">          <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;连接失败&quot;</span>);</span><br><span class="line">      &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">          <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;连接成功&quot;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">     <span class="comment">//语句</span></span><br><span class="line">    <span class="keyword">let</span> sentence=<span class="string">&#x27;SELECT * FROM admin where username=&quot;&#x27;</span>+u+<span class="string">&#x27;&quot; and password=&quot;&#x27;</span>+p+<span class="string">&#x27;&quot;&#x27;</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(sentence);</span><br><span class="line">    connection.<span class="title function_">query</span>(sentence, <span class="function">(<span class="params">error, results, fields</span>)=&gt;</span>&#123;</span><br><span class="line">      <span class="keyword">if</span>(error)&#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;数据库连接失败&quot;</span>)&#125;</span><br><span class="line">      <span class="variable language_">console</span>.<span class="title function_">log</span>(results);</span><br><span class="line">      <span class="keyword">try</span>&#123;</span><br><span class="line">            <span class="comment">//判断</span></span><br><span class="line">            <span class="keyword">if</span>(u==results[<span class="number">0</span>][<span class="string">&quot;username&quot;</span>] &amp;&amp; p==results[<span class="number">0</span>][<span class="string">&quot;password&quot;</span>])&#123;</span><br><span class="line">                res.<span class="title function_">send</span>(<span class="string">&quot;欢迎管理员！post&quot;</span>);</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                res.<span class="title function_">send</span>(<span class="string">&quot;闲杂人等不得入内！post&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">      &#125;<span class="keyword">catch</span>&#123;</span><br><span class="line">          <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;语句有误！&quot;</span>);</span><br><span class="line">      &#125;</span><br><span class="line">      </span><br><span class="line">      </span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">// //判断</span></span><br><span class="line">    <span class="comment">// if(u==&quot;admin&quot; &amp;&amp; p==&quot;123456&quot;)&#123;</span></span><br><span class="line">    <span class="comment">//     res.send(&quot;欢迎管理员！post&quot;);</span></span><br><span class="line">    <span class="comment">// &#125;else&#123;</span></span><br><span class="line">    <span class="comment">//     res.send(&quot;闲杂人等不得入内！post&quot;);</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 启动服务器并监听指定端口</span></span><br><span class="line">app.<span class="title function_">listen</span>(port, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Server is running on http://localhost:<span class="subst">$&#123;port&#125;</span>`</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>（如有不恰当的地方欢迎指正哦 ~o(●’◡’●)o）</p>
+<hr>
+<p><strong><font color="red">参考blogs：</font></strong></p>
+<p>【<a target="_blank" rel="noopener" href="https://blog.csdn.net/2301_78542842/article/details/138397841">webpack超详细教程，学webpack看这一篇就够了！（上）</a>】</p>
+<p>【<a target="_blank" rel="noopener" href="https://blog.csdn.net/lph159/article/details/142381712#1__7">【Webpack】三种模式详解</a>】</p>
+<p>【<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_25927437/article/details/85785533">Webpack三种打包方式：（以下所有命令都是windows下执行的）</a>】</p>
+</article>
+<div class="article-footer">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    
+
+</div>
+
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">较新文章</div><a href="/2025/08/08/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-32~40%E2%80%94%E2%80%94java%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE%EF%BC%881%EF%BC%89/">小迪23年-32~40——java简单回顾（1）</a></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2025/08/02/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-22~27%E2%80%94%E2%80%94php%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE%EF%BC%882%EF%BC%89/">小迪23年-22~27——php简单回顾（2）</a></div></section></div>
+
+
+
+
+  <div class="related-wrap md-text" id="comments">
+    <section class='header cmt-title cap theme'>
+      <p>欢迎讨论！不过评论并没有做图床，限制也比较大，担待担待~</p>
+
+    </section>
+    <section class='body cmt-body waline'>
+      
+
+<div id="waline_container" class="waline_thread"><svg class="loading" style="vertical-align:middle;fill:currentColor;overflow:hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg></div>
+
+    </section>
+  </div>
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">轻抚酸</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1">Stellar 1.33.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E7%AB%AF-js%E5%BC%80%E5%8F%91"><span class="toc-text">前端-js开发</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81"><span class="toc-text">登录验证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0"><span class="toc-text">文件上传</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%89%93%E5%8C%85%E5%99%A8webpack"><span class="toc-text">打包器webpack</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#express%E5%AE%9E%E7%8E%B0%E6%9C%8D%E5%8A%A1%E7%AB%AF"><span class="toc-text">express实现服务端</span></a></li></ol></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M8 10.5h8M8 14h5.5M17 3.338A9.95 9.95 0 0 0 12 2C6.477 2 2 6.477 2 12c0 1.6.376 3.112 1.043 4.453c.178.356.237.763.134 1.148l-.595 2.226a1.3 1.3 0 0 0 1.591 1.592l2.226-.596a1.63 1.63 0 0 1 1.149.133A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10c0-1.821-.487-3.53-1.338-5"/></svg><span>参与讨论</span></a></div></widget>
+
+<widget class="widget-wrapper timeline"><div class="widget-header dis-select"><span class="name">说说</span></div><div class="widget-body fs14"><div class="tag-plugin timeline data-service ds-memos" data-api="https://s.dusays.com/api/v1/memo?creatorId=207"></div></div></widget>
+</div></aside><div class='float-panel'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+
+
+<script type="text/javascript">
+  window.canonical = {"originalHost":null,"officialHosts":["localhost"],"encoded":""};
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+    tag_plugins: {
+      chat: Object.assign({"api":"https://siteinfo.listentothewind.cn/api/v1"}),
+    }
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"skip_search":null,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+    loading: `https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd`,
+  };
+  const deps = {
+    jquery: `https://gcore.jsdelivr.net/npm/jquery@3.7/dist/jquery.min.js`,
+    marked: `https://gcore.jsdelivr.net/npm/marked@13.0/lib/marked.umd.min.js`,
+    lazyload: `/%5Bobject%20Object%5D`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = () => {
+          utils.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) => {
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index, 1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')) {
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function () {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      const maxRetry = 3;
+      let retryCount = 0;
+
+      return new Promise((resolve, reject) => {
+        const load = () => {
+          utils.onLoading?.(el);
+
+          let timedOut = false;
+          const timeout = setTimeout(() => {
+            timedOut = true;
+            console.warn('[request] 超时:', url);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject('请求超时');
+            } else {
+              setTimeout(load, 1000);
+            }
+          }, 5000);
+
+          fetch(url).then(resp => {
+            if (timedOut) return;
+            clearTimeout(timeout);
+
+            if (!resp.ok) throw new Error('响应失败');
+            return resp;
+          }).then(data => {
+            if (timedOut) return;
+            utils.onLoadSuccess?.(el);
+            callback(data);
+            resolve(data);
+          }).catch(err => {
+            clearTimeout(timeout);
+            console.warn('[request] 错误:', err);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject(err);
+            } else {
+              setTimeout(load, 1000);
+            }
+          });
+        };
+
+        load();
+      });
+    },
+    requestWithoutLoading: (url, options = {}, maxRetry = 2, timeout = 5000) => {
+      return new Promise((resolve, reject) => {
+        let retryCount = 0;
+
+        const tryRequest = () => {
+          let timedOut = false;
+          const timer = setTimeout(() => {
+            timedOut = true;
+            if (++retryCount > maxRetry) reject('timeout');
+            else tryRequest();
+          }, timeout);
+
+          fetch(url, options)
+            .then(resp => {
+              clearTimeout(timer);
+              if (!resp.ok) throw new Error('bad response');
+              resolve(resp);
+            })
+            .catch(err => {
+              clearTimeout(timer);
+              if (++retryCount > maxRetry) reject(err);
+              else setTimeout(tryRequest, 500);
+            });
+        };
+
+        tryRequest();
+      });
+    },
+    /********************** requestAnimationFrame ********************************/
+    // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+    // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+    requestAnimationFrame: (fn) => {
+      if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+      }
+      window.requestAnimationFrame(fn)
+    },
+    dark: {},
+  };
+
+  // utils.dark.mode 当前模式 dark or light
+  // utils.dark.toggle() 暗黑模式触发器
+  // utils.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  utils.dark.method = {
+    toggle: new RunItem(),
+  };
+  utils.dark = Object.assign(utils.dark, {
+    push: utils.dark.method.toggle.push,
+  });
+</script>
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+<script type="text/javascript">
+  (() => {
+    const tagSwitchers = document.querySelectorAll('.tag-subtree.parent-tag > a > .tag-switcher-wrapper')
+    for (const tagSwitcher of tagSwitchers) {
+      tagSwitcher.addEventListener('click', (e) => {
+        const parent = e.target.closest('.tag-subtree.parent-tag')
+        parent.classList.toggle('expanded')
+        e.preventDefault()
+      })
+    }
+
+    // Get active tag from query string, then activate it.
+    const urlParams = new URLSearchParams(window.location.search)
+    const activeTag = urlParams.get('tag')
+    if (activeTag) {
+      let tag = document.querySelector(`.tag-subtree[data-tag="${activeTag}"]`)
+      if (tag) {
+        tag.querySelector('a').classList.add('active')
+        
+        while (tag) {
+          tag.classList.add('expanded')
+          tag = tag.parentElement.closest('.tag-subtree.parent-tag')
+        }
+      }
+    }
+  })()
+</script>
+
+<script async src="https://gcore.jsdelivr.net/npm/vanilla-lazyload@19.1/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+    callback_loaded: (el) => {
+      el.classList.add('loaded');
+      const wrapper = el.closest('.lazy-box');
+      const icon = wrapper?.querySelector('.lazy-icon');
+      if (icon) icon.remove();
+    }
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+
+  window.wrapLazyloadImages = (container) => {
+    if (typeof container === 'string') {
+      container = document.querySelector(container);
+    }
+    if (!container) return;
+    
+    const images = container.querySelectorAll('img');
+    images.forEach((img) => {
+      if (img.classList.contains('lazy')) return;
+
+      const src = img.getAttribute('src');
+      if (!src) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'lazy-box';
+
+      const newImg = img.cloneNode();
+      newImg.removeAttribute('src');
+      newImg.setAttribute('data-src', src);
+      newImg.classList.add('lazy');
+
+      const icon = document.createElement('div');
+      icon.className = 'lazy-icon';
+      if (def.loading) {
+        icon.style.backgroundImage = `url("${def.loading}")`;
+      }
+
+      wrapper.appendChild(newImg);
+      wrapper.appendChild(icon);
+
+      img.replaceWith(wrapper);
+    });
+
+    // 通知 LazyLoad 更新
+    if (window.lazyLoadInstance?.update) {
+      window.lazyLoadInstance.update();
+    }
+  }
+  
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.33.1" defer></script>
+
+<script type="text/javascript">
+  const applyTheme = (theme) => {
+    if (theme === 'auto') {
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+
+    // applyThemeToGiscus(theme)
+  }
+
+  // FIXME: 这会导致无法使用 preferred_color_scheme 以外的主题
+  const applyThemeToGiscus = (theme) => {
+    // theme = theme === 'auto' ? 'preferred_color_scheme' : theme
+    const cmt = document.getElementById('giscus')
+    if (cmt) {
+      // This works before giscus load.
+      cmt.setAttribute('data-theme', theme)
+    }
+
+    const iframe = document.querySelector('#comments > section.giscus > iframe')
+    if (iframe) {
+      // This works after giscus loaded.
+      const src = iframe.src
+      const newSrc = src.replace(/theme=[\w]+/, `theme=${theme}`)
+      iframe.src = newSrc
+    }
+  }
+
+  const switchTheme = () => {
+    // light -> dark -> auto -> light -> ...
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    let newTheme;
+    switch (currentTheme) {
+      case 'light':
+        newTheme = 'dark'
+        break
+      case 'dark':
+        newTheme = 'auto'
+        break
+      default:
+        newTheme = 'light'
+    }
+    applyTheme(newTheme)
+    window.localStorage.setItem('Stellar.theme', newTheme)
+    utils.dark.mode = newTheme === 'auto' ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : newTheme;
+    utils.dark.method.toggle.start();
+
+    const messages = {
+      light: `切换到浅色模式`,
+      dark: `切换到深色模式`,
+      auto: `切换到跟随系统配色`,
+    }
+    hud?.toast?.(messages[newTheme])
+  }
+
+  (() => {
+    // Apply user's preferred theme, if any.
+    const theme = window.localStorage.getItem('Stellar.theme')
+    if (theme !== null) {
+      applyTheme(theme)
+    } else {
+      utils.dark.mode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    utils.dark.method.toggle.start();
+  })()
+</script>
+
+
+<!-- optional -->
+
+  <script type="module">
+  import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+
+  const el = document.getElementById('waline_container');
+  util.viewportLazyload(el, load_waline, false);
+
+  function load_waline(){
+    if (!el) return;
+
+    utils.css('https://unpkg.com/@waline/client@v3/dist/waline.css');
+    utils.css('https://gcore.jsdelivr.net/npm/@waline/client@3.1/dist/waline-meta.css');
+
+    const path = el.getAttribute('comment_id') ?? decodeURI(window.location.pathname);
+    const waline = init(Object.assign({"js":"https://unpkg.com/@waline/client@v3/dist/waline.js","css":"https://unpkg.com/@waline/client@v3/dist/waline.css","meta_css":"https://gcore.jsdelivr.net/npm/@waline/client@3.1/dist/waline-meta.css","serverURL":"https://comment.hfqing.top","commentCount":true,"pageview":false,"search":false,"reaction":true,"comment":true,"locale":{"level0":"练气","level1":"筑基","level2":"金丹","level3":"元婴","level4":"化神","level5":"合体","level6":"渡劫","level7":"大乘"},"emoji":["https://unpkg.com/@waline/emojis@1.1.0/weibo","https://unpkg.com/@waline/emojis@1.1.0/alus","https://unpkg.com/@waline/emojis@1.1.0/bilibili","https://unpkg.com/@waline/emojis@1.1.0/qq","https://unpkg.com/@waline/emojis@1.1.0/tieba","https://unpkg.com/@waline/emojis@1.1.0/tw-emoji","https://unpkg.com/@waline/emojis@1.1.0/bmoji","https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs"]}, {
+      el: '#waline_container',
+      path: path,
+      
+    }));
+  }
+</script>
+
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"rating":{"js":"/js/services/rating.js","api":"https://star-vote.xaox.cc/api/rating"},"vote":{"js":"/js/services/vote.js","api":"https://star-vote.xaox.cc/api/vote"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"contributors":{"edit_this_page":{"_posts/":null,"wiki/stellar/":"https://github.com/xaoxuu/hexo-theme-stellar-docs/blob/main/"},"js":"/js/services/contributors.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else if (id == 'voice') {
+        ctx.voiceAudios = document.querySelectorAll('.voice>audio');
+        if (ctx.voiceAudios?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            createVoiceDom(ctx.voiceAudios);
+          });
+        }
+      } else if (id == 'video') {
+        ctx.videos = document.querySelectorAll('.video>video');
+        if (ctx.videos?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            videoEvents(ctx.videos);
+          });
+        }
+      } else if (id == 'download-file') {
+        ctx.files = document.querySelectorAll('.file');
+        if (ctx.files?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            downloadFileEvent(ctx.files);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+
+    // chat iphone time
+    let phoneTimes = document.querySelectorAll('.chat .status-bar .time');
+
+    if (phoneTimes.length > 0) {
+      NowTime();
+      var date = new Date();
+      var sec = date.getSeconds();
+      var firstAdjustInterval = setInterval(firstAdjustTime, 1000 * (60 - sec));
+    }
+
+    function firstAdjustTime() {
+      NowTime();
+      clearInterval(firstAdjustInterval);
+      setInterval(NowTime, 1000 * 60);
+    }
+
+    function NowTime() {
+      for (let i = 0; i < phoneTimes.length; ++i) {
+        var timeSpan = phoneTimes[i];
+        var date = new Date();
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        timeSpan.innerHTML = check(hour) + ":" + check(min);
+      }
+    };
+
+    function check(val) {
+      if (val < 10) {
+        return ("0" + val);
+      }
+      return (val);
+    }
+
+    // chat quote
+    const chat_quote_obverser = new IntersectionObserver((entries, observer) => {
+      entries.filter((entry) => { return entry.isIntersecting }).sort((a, b) => a.intersectionRect.y !== b.intersectionRect.y ? a.intersectionRect.y - b.intersectionRect.y : a.intersectionRect.x - b.intersectionRect.x).forEach((entry, index) => {
+          observer.unobserve(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('quote-blink');
+            setTimeout(() => {
+              entry.target.classList.remove('quote-blink');
+            }, 1000);
+          }, Math.max(100, 16) * (index + 1));
+        });
+    });
+
+    var chatQuotes = document.querySelectorAll(".chat .talk .quote");
+    chatQuotes.forEach((quote) => {
+      quote.addEventListener('click', function () {
+        var chatCellDom = document.getElementById("quote-" + quote.getAttribute("quotedCellTag"));
+        if (chatCellDom) {
+          var chatDiv = chatCellDom.parentElement;
+          var mid = chatDiv.clientHeight / 2;
+          var offsetTop = chatCellDom.offsetTop;
+          if (offsetTop > mid - chatCellDom.clientHeight / 2) {
+            chatDiv.scrollTo({
+              top: chatCellDom.offsetTop - mid + chatCellDom.clientHeight / 2,
+              behavior: "smooth"
+            });
+          } else {
+            chatDiv.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          }
+          chat_quote_obverser.observe(chatCellDom);
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://gcore.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js"></script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css`,
+    js: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js`
+  };
+  var selector = '[data-fancybox]:not(.error), .with-fancybox .atk-content img:not([atk-emoticon])';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const memos = document.getElementsByClassName('ds-memos');
+    if (memos != undefined && memos.length > 0) {
+      needFancybox = true;
+    }
+    const fancybox = document.getElementsByClassName('with-fancybox');
+    if (fancybox != undefined && fancybox.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+<script type="text/javascript" src="/js/custom.js?1"></script><script src="/js/custom.js?1"></script>
+</div></body></html>

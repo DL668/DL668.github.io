@@ -1,0 +1,151 @@
+
+body, html {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ===== 整个页面背景：模糊 + 泛白 ===== */
+body::before {
+  content: "";
+  position: flex;
+  align-items: center; /* 垂直居中 */
+  inset: 0; /* top/right/bottom/left = 0，全屏覆盖 */
+  background: url(https://imgproxy.hfqing.top/image/?url=https://p.cldisk.com/star3/origin/6d4ef8640fef4f7a7021653917a92cc8.png) no-repeat center center / cover !important;
+  filter: blur(1px) brightness(1.0); /* 模糊+略微提亮 */
+  transform: scale(1.1); /* 防止边缘出现空隙 */
+  z-index: -2; /* 保证在所有内容后面 */
+}
+
+/* 泛白层：让文字更清晰 body::after*/
+ .content div.l_main .content{
+  content: "";
+  inset: 0;
+  background: rgba(255, 255, 255, 0.7); /* 泛白层（可以调透明度） */
+}
+ .content div.l_main .top{
+  margin-bottom: 10px;
+}
+
+
+/* ===== 左边栏毛玻璃 ===== */
+.l_left {
+  background: rgba(255, 255, 255, 0.6) ; /* 白色占比更大，文字更清晰 */
+  backdrop-filter: blur(25px) saturate(180%) ;
+  -webkit-backdrop-filter: blur(25px) saturate(180%) ;
+  border-radius: 16px ;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2) ;
+  /* 变长 */
+  display: flex ;
+  min-height: 84vh ;
+  position: relative ;
+}
+/* .l_left footer.footer{
+  position: absolute ;
+  bottom: 0 ;
+}
+.l_left footer.footer{
+  display: flex ;
+  position: absolute ;
+  bottom: 20px ;
+}
+.l_left footer.footer .social-wrap {
+  /* 解决问题的关键：对 social-wrap 应用 Flexbox * /
+  display: flex ;
+}
+footer.footer .social-wrap .social {
+  /* 假设这是图标的样式，比如一个图片或图标字体 * /
+  width: 20px ;
+  height: 20px ;
+} */
+
+
+
+.post-card{
+  opacity:0.75;	/*半透明*/
+  backdrop-filter: blur(4px) ;/* 轻微模糊 */
+}
+
+
+/* 代码片段白底 */
+ .highlight {
+  background: rgba(255, 255, 255, 0.4) !important;  /*白色占比更大，文字更清晰 */
+  backdrop-filter: blur(4px);           /* 轻微模糊 */
+  border-radius: 6px;
+  padding: 10px;
+  overflow-x: auto;
+}
+
+
+/* 右边框目录 */
+#data-toc{
+  background: rgba(255, 255, 255, 0.2) ; /* 白色占比更大，文字更清晰 */
+  backdrop-filter: blur(25px) saturate(180%);
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+}
+
+
+
+
+/* 引用> */
+blockquote{
+  background-color: rgba(255, 255, 255, 0.4) !important; /* 白色占比更大，文字更清晰 */
+}
+
+/* `` */
+code{
+  background-color: #f9f2f4 !important;
+  color: #c7254e !important;
+}
+
+
+/* 右卡片样式 */
+/* 控制右侧卡片的列表间距 */
+.widgets ul li {
+  margin: 6px 0;           /* 每一项上下间距 */
+  line-height: 1.6;        /* 行高 */
+  list-style: none;        /* 去掉默认小黑点 */
+  display: flex;           /* 图标 + 文字更整齐 */
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+
+/* 博客标题字体大小 */
+.md-text h2.post-title{
+  font-size: 1.3rem !important;
+  font-weight: 700 !important;
+}
+
+
+/* 关于博客 */
+.widget-body{
+  /* 来点模糊 */
+  backdrop-filter: blur(4px); 
+}
+/* footer */
+#read-next{
+  content: "";
+  inset: 0;
+  background: rgba(255, 255, 255, 0.7); /* 泛白层（可以调透明度） */
+}
+
+.article-footer{
+  content: "";
+  inset: 0;
+  background: rgba(255, 255, 255, 0.7); /* 泛白层（可以调透明度） */
+}
+
+
+
+/* 隐藏下面的横线 */
+.l_main footer.page-footer{
+  display: none;
+}
+
+
+/* 把左边最下面的footer固定在下面 */
+.float-panel{
+  display: none;
+}

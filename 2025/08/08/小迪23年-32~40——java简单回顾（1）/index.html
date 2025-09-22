@@ -1,0 +1,1010 @@
+
+<!DOCTYPE html><html lang="zh-CN">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1" theme-name="Stellar" theme-version="1.33.1">
+  
+  
+  <meta name="generator" content="Hexo 7.3.0">
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
+  <meta name="theme-color" content="#f9fafb">
+  <title>小迪23年-32~40——java简单回顾（1） - 轻抚酸</title>
+
+  
+    <meta name="description" content="b站小迪23年网安基础课程，28节——31节，java简单回顾（1）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小迪23年-32~40——java简单回顾（1）">
+<meta property="og:url" content="https://www.hfqing.top/2025/08/08/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-32~40%E2%80%94%E2%80%94java%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE%EF%BC%881%EF%BC%89/">
+<meta property="og:site_name" content="轻抚酸">
+<meta property="og:description" content="b站小迪23年网安基础课程，28节——31节，java简单回顾（1）">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://www.hfqing.top/images/avatar2.svg">
+<meta property="article:published_time" content="2025-08-08T02:39:46.000Z">
+<meta property="article:modified_time" content="2025-09-13T08:38:28.378Z">
+<meta property="article:author" content="轻抚酸">
+<meta property="article:tag" content="网课小迪">
+<meta property="article:tag" content="温习">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.hfqing.top/images/avatar2.svg">
+  
+  
+  
+  <meta name="keywords" content="网课小迪,温习">
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="轻抚酸" type="application/atom+xml">
+  
+
+  <link rel="stylesheet" href="/css/main.css?v=1.33.1">
+<link rel="stylesheet" href="/css/custom.css">
+
+
+  
+
+  
+
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"轻抚酸","sameAs":[],"image":"/images/avatar2.svg"},"dateCreated":"2025-08-08T10:39:46+08:00","dateModified":"2025-09-13T16:38:28+08:00","datePublished":"2025-08-08T10:39:46+08:00","description":"b站小迪23年网安基础课程，28节——31节，java简单回顾（1）","headline":"小迪23年-32~40——java简单回顾（1）","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.hfqing.top/2025/08/08/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-32~40%E2%80%94%E2%80%94java%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE%EF%BC%881%EF%BC%89/"},"publisher":{"@type":"Organization","name":"轻抚酸","sameAs":[],"image":"/images/avatar2.svg","logo":{"@type":"ImageObject","url":"/images/avatar2.svg"}},"url":"https://www.hfqing.top/2025/08/08/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-32~40%E2%80%94%E2%80%94java%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE%EF%BC%881%EF%BC%89/","keywords":"网课小迪, 温习","image":[]}</script>
+  <link rel="stylesheet" href="https://npm.elemecdn.com/lxgw-wenkai-screen-webfont/style.css" media="print" onload="this.media='all'">
+</head>
+<body>
+
+<div class="l_body content" id="start" layout="post" type="tech" ><aside class="l_left"><div class="sidebg"></div><div class="leftbar-container">
+
+
+<header class="header"><div class="logo-wrap"><a class="avatar" href="/about/"><div class="bg" style="opacity:0;background-image:url(https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/rainbow64@3x.webp);"></div><img no-lazy class="avatar" src="/images/avatar2.svg" onerror="javascript:this.classList.add('error');this.src='https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/image/2659360.svg';"></a><a class="title" href="/"><div class="main">轻抚酸</div><div class="sub normal cap">从分享欲开始</div><div class="sub hover cap" style="opacity:0"> 我即FW！</div></a></div></header>
+
+<div class="nav-area">
+
+<nav class="menu dis-select"><a class="nav-item active" title="博客" href="/" style="color:#1BCDFC"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M5.879 2.879C5 3.757 5 5.172 5 8v8c0 2.828 0 4.243.879 5.121C6.757 22 8.172 22 11 22h2c2.828 0 4.243 0 5.121-.879C19 20.243 19 18.828 19 16V8c0-2.828 0-4.243-.879-5.121C17.243 2 15.828 2 13 2h-2c-2.828 0-4.243 0-5.121.879M8.25 17a.75.75 0 0 1 .75-.75h3a.75.75 0 0 1 0 1.5H9a.75.75 0 0 1-.75-.75M9 12.25a.75.75 0 0 0 0 1.5h6a.75.75 0 0 0 0-1.5zM8.25 9A.75.75 0 0 1 9 8.25h6a.75.75 0 0 1 0 1.5H9A.75.75 0 0 1 8.25 9" clip-rule="evenodd"/><path fill="currentColor" d="M5.235 4.058C5 4.941 5 6.177 5 8v8c0 1.823 0 3.058.235 3.942L5 19.924c-.975-.096-1.631-.313-2.121-.803C2 18.243 2 16.828 2 14v-4c0-2.829 0-4.243.879-5.121c.49-.49 1.146-.707 2.121-.803zm13.53 15.884C19 19.058 19 17.822 19 16V8c0-1.823 0-3.059-.235-3.942l.235.018c.975.096 1.631.313 2.121.803C22 5.757 22 7.17 22 9.999v4c0 2.83 0 4.243-.879 5.122c-.49.49-1.146.707-2.121.803z" opacity=".5"/></svg></a><a class="nav-item" title="友链" href="/friends/" style="color:#F44336"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m13.629 20.472l-.542.916c-.483.816-1.69.816-2.174 0l-.542-.916c-.42-.71-.63-1.066-.968-1.262c-.338-.197-.763-.204-1.613-.219c-1.256-.021-2.043-.098-2.703-.372a5 5 0 0 1-2.706-2.706C2 14.995 2 13.83 2 11.5v-1c0-3.273 0-4.91.737-6.112a5 5 0 0 1 1.65-1.651C5.59 2 7.228 2 10.5 2h3c3.273 0 4.91 0 6.113.737a5 5 0 0 1 1.65 1.65C22 5.59 22 7.228 22 10.5v1c0 2.33 0 3.495-.38 4.413a5 5 0 0 1-2.707 2.706c-.66.274-1.447.35-2.703.372c-.85.015-1.275.022-1.613.219c-.338.196-.548.551-.968 1.262" opacity=".5"/><path fill="currentColor" d="M10.99 14.308c-1.327-.978-3.49-2.84-3.49-4.593c0-2.677 2.475-3.677 4.5-1.609c2.025-2.068 4.5-1.068 4.5 1.609c0 1.752-2.163 3.615-3.49 4.593c-.454.335-.681.502-1.01.502c-.329 0-.556-.167-1.01-.502"/></svg></a></nav>
+</div>
+<div class="widgets">
+<div class="search-wrapper" id="search-wrapper"><form class="search-form"><a class="search-button" onclick="document.getElementById(&quot;search-input&quot;).focus();"><svg t="1705074644177" viewBox="0 0 1025 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="1560" width="200" height="200"><path d="M1008.839137 935.96571L792.364903 719.491476a56.783488 56.783488 0 0 0-80.152866 0 358.53545 358.53545 0 1 1 100.857314-335.166073 362.840335 362.840335 0 0 1-3.689902 170.145468 51.248635 51.248635 0 1 0 99.217358 26.444296 462.057693 462.057693 0 1 0-158.255785 242.303546l185.930047 185.725053a51.248635 51.248635 0 0 0 72.568068 0 51.248635 51.248635 0 0 0 0-72.978056z" p-id="1561"></path><path d="M616.479587 615.969233a50.428657 50.428657 0 0 0-61.498362-5.534852 174.655348 174.655348 0 0 1-177.525271 3.484907 49.403684 49.403684 0 0 0-58.833433 6.76482l-3.074918 2.869923a49.403684 49.403684 0 0 0 8.609771 78.10292 277.767601 277.767601 0 0 0 286.992355-5.739847 49.403684 49.403684 0 0 0 8.404776-76.667958z" p-id="1562"></path></svg></a><input type="text" class="search-input" id="search-input" placeholder="站内搜索"></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div>
+
+
+
+<widget class="widget-wrapper recent post-list"><div class="widget-header dis-select"><span class="name">最近更新</span><a class="cap-action" id="rss" title="Subscribe" href="atom.xml"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M5 21q-.825 0-1.412-.587T3 19q0-.825.588-1.412T5 17q.825 0 1.413.588T7 19q0 .825-.587 1.413T5 21m13.5 0q-.65 0-1.088-.475T16.9 19.4q-.275-2.425-1.312-4.537T12.9 11.1q-1.65-1.65-3.762-2.687T4.6 7.1q-.65-.075-1.125-.512T3 5.5q0-.65.45-1.062t1.075-.363q3.075.275 5.763 1.563t4.737 3.337q2.05 2.05 3.338 4.738t1.562 5.762q.05.625-.363 1.075T18.5 21m-6 0q-.625 0-1.075-.437T10.85 19.5q-.225-1.225-.787-2.262T8.65 15.35q-.85-.85-1.888-1.412T4.5 13.15q-.625-.125-1.062-.575T3 11.5q0-.65.45-1.075t1.075-.325q1.825.25 3.413 1.063t2.837 2.062q1.25 1.25 2.063 2.838t1.062 3.412q.1.625-.325 1.075T12.5 21"/></svg></a></div><div class="widget-body fs14"><a class="item title" href="/2025/07/25/kali%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5-%E9%80%89%E6%8B%A9%E5%B9%B6%E5%AE%89%E8%A3%85%E8%BD%AF%E4%BB%B6%E5%8C%85-%E4%B8%80%E6%AD%A5%E5%88%B0%E4%BD%8D/"><span class="title">kali安装失败-选择并安装软件包-一步到位</span></a><a class="item title" href="/2025/08/01/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-22~27%E2%80%94%E2%80%94php%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE%EF%BC%881%EF%BC%89/"><span class="title">小迪23年-22~27——php简单回顾（1）</span></a><a class="item title" href="/2025/08/02/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-22~27%E2%80%94%E2%80%94php%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE%EF%BC%882%EF%BC%89/"><span class="title">小迪23年-22~27——php简单回顾（2）</span></a><a class="item title" href="/2025/08/02/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-28~31%E2%80%94%E2%80%94js%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE/"><span class="title">小迪23年-28~31——js简单回顾</span></a><a class="item title" href="/2025/08/08/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-32~40%E2%80%94%E2%80%94java%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE%EF%BC%881%EF%BC%89/"><span class="title">小迪23年-32~40——java简单回顾（1）</span></a></div></widget>
+</div>
+<footer class="footer dis-select"><div class="social-wrap"><a class="social" href="https://github.com/DL668" target="_blank" rel="external nofollow noopener noreferrer"><img src="/images/github2.svg"/></a><a class="social" href="https://qm.qq.com/cgi-bin/qm/qr?k=jBzttOhbydvSf_PcHQbAokSpvSrBj9jC" target="_blank" rel="external nofollow noopener noreferrer"><img src="/images/qq.svg"/></a></div></footer>
+</div></aside><div class="l_main" id="main">
+
+
+
+
+
+<div class="article banner top">
+  <div class="content">
+    <div class="top bread-nav footnote"><div class="left"><div class="flex-row" id="breadcrumb"><a class="cap breadcrumb" href="/">主页</a>
+<span class="sep"></span><a class="cap breadcrumb" href="/">文章</a><span class="sep"></span><a class="cap breadcrumb-link" href="/categories/%E8%AF%BE%E5%A0%82/">课堂</a> <span class="sep"></span> <a class="cap breadcrumb-link" href="/categories/%E8%AF%BE%E5%A0%82/%E7%AC%94%E8%AE%B0/">笔记</a></div>
+<div class="flex-row" id="post-meta"><span class="text created">发布于：<time datetime="2025-08-08T02:39:46.000Z">2025-08-08</time></span><span class="sep updated"></span><span class="text updated">更新于：<time datetime="2025-09-13T08:38:28.378Z">2025-09-13</time></span></div></div></div>
+    
+    <div class="bottom only-title">
+      
+      <div class="text-area">
+        <h1 class="text title"><span>小迪23年-32~40——java简单回顾（1）</span></h1>
+        
+      </div>
+    </div>
+    
+  </div>
+  </div><article class="md-text content"><p>b站小迪23年网安基础课程，28节——31节，java简单回顾（1）</p>
+<span id="more"></span>
+
+<h1 id="原生类"><a href="#原生类" class="headerlink" title="原生类"></a>原生类</h1><blockquote>
+<p>课堂完结后欲复习巩固也方便后续-重游-故写此篇<br>从实现功能过渡到涉及的相关知识点</p>
+</blockquote>
+<h2 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h2><blockquote>
+<p>Java Servlet 是运行在 Web 服务器或应用服务器上的程序，它是作为来自 Web 浏览器或其他 HTTP 客户端的请求和 HTTP 服务器上的数据库或应用程序之间的中间层。<br>简单来说就是帮你接收和发送浏览器信息的，需自定路由的“中间层”</p>
+</blockquote>
+<table><tr><td bgcolor=DarkSeaGreen>知识点</td></tr></table>
+
+<p><strong>1、</strong> 有两种设置路由的方式。<br>&nbsp;&nbsp;1.1、最原生的是在 <code>java</code> 同级文件夹 <code>webapp</code> 的里的文件 <code>web.xml</code> 里设置，比如：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>sun<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>com.example.demo1.sun_servlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>sun<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/sun1<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>sun<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/sun2<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>&nbsp;&nbsp;1.2、还有就是普遍使用的Servlet 3.0引入的一个特性   <code>@Webservlert</code> 注解</p>
+<blockquote>
+<p>@WebServlet注解是Servlet 3.0引入的一个特性，它允许开发者在Servlet类上使用注解来声明Servlet的一些属性，从而避免在web.xml文件中进行配置。</p>
+</blockquote>
+<p>只需了解前两个属性就好：name，value。例：<code>@Webservlet(name=&quot;nm&quot;,value=&quot;/path&quot;)</code> ，可简写作<code>@Webservlet(&quot;/path&quot;)</code></p>
+<blockquote>
+<p><code>name</code> 的值相当于 <code>web.xml</code> 里的 <code>&lt;servlet-name&gt;</code> 属性，不写默认为类的全限定名</p>
+</blockquote>
+<p><strong>2、</strong> 全限定类名</p>
+<blockquote>
+<p>全限定类名的主要作用是提供一个唯一的类标识，避免不同包中具有相同类名的类之间的冲突。</p>
+</blockquote>
+<p>比如 <code>servlert</code> 必须引用的 <code>HttpServlet</code> 的全限定类名是 ：<code>javax.servlet.http.HttpServlet</code></p>
+<p><strong>3、</strong> 除了支持 get、post 方式发送请求的重写方法 <code>doGet</code> 和<code>doPost</code>，还有只在最开始执行一次的 <code>init()</code>，只在销毁的时候执行一次的 <code>destroy</code></p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><p><del>具体的知识点不多，以自带的 HelloServlet 类为例小小改一下当复习就好了</del></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.example.demo1;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.*;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.annotation.*;</span><br><span class="line"></span><br><span class="line"><span class="meta">@WebServlet(name = &quot;helloServlet&quot;, value = &quot;/hello-servlet&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">HelloServlet</span> <span class="keyword">extends</span> <span class="title class_">HttpServlet</span> &#123;</span><br><span class="line">    <span class="keyword">private</span> String message;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">()</span> <span class="keyword">throws</span> ServletException &#123;</span><br><span class="line">        <span class="comment">//最先被执行且一次</span></span><br><span class="line">        message = <span class="string">&quot;Hello World!&quot;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> <span class="keyword">throws</span> IOException &#123;</span><br><span class="line">        response.setContentType(<span class="string">&quot;text/html&quot;</span>);</span><br><span class="line">        <span class="comment">// Hello</span></span><br><span class="line">        <span class="type">PrintWriter</span> <span class="variable">out</span> <span class="operator">=</span> response.getWriter();</span><br><span class="line"><span class="comment">//        out.println(&quot;&lt;html&gt;&lt;body&gt;&quot;);</span></span><br><span class="line"><span class="comment">//       out.println(&quot;&lt;h1&gt;&quot; + message + &quot;&lt;/h1&gt;&quot;);</span></span><br><span class="line"><span class="comment">//       out.println(&quot;&lt;/body&gt;&lt;/html&gt;&quot;);</span></span><br><span class="line">        <span class="comment">// 或者换种支持链式写法 </span></span><br><span class="line">        out.append(<span class="string">&quot;&lt;html&gt;&lt;body&gt;&quot;</span>)</span><br><span class="line">                .append(<span class="string">&quot;&lt;h1&gt;&quot;</span> + message + <span class="string">&quot;&lt;/h1&gt;&quot;</span>)</span><br><span class="line">                .append(<span class="string">&quot;&lt;/body&gt;&lt;/html&gt;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">destroy</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;我销毁了，你看着办&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h2><blockquote>
+<p>JDBC（Java Database Connectivity）是Java语言中用于操作关系型数据库的一套API。它提供了一组标准接口，使得Java程序可以与不同的数据库进行交互。JDBC的核心思想是面向接口编程，通过定义一组标准接口，各个数据库厂商实现这些接口，从而提供数据库驱动。</p>
+</blockquote>
+<p>简单流程：导入驱动 jar 包 -&gt; 通过反射加载驱动 -&gt; 连接数据库 -&gt; 请求并接收处理返回的数据库数据</p>
+<table><tr><td bgcolor=DarkSeaGreen>知识点</td></tr></table>
+
+<p><strong>1、</strong> 由于java的预编译语言特性，所以原生开发就有有效的法子预防sql注入（预编译），后面 Code 里细嗦</p>
+<p><strong>2、</strong> 加载数据库驱动的目的是将 JDBC 驱动加载到 JVM（java虚拟机）里，为后续 连接数据库时调用 JDBC 接口做准备。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//加载数据库驱动</span></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">    Class.forName(<span class="string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>);</span><br><span class="line">&#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> <span class="title class_">RuntimeException</span>(e);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>3、</strong> 预编译防 sql 原理</p>
+<blockquote>
+<p>预编译（Prepared Statements）是一种在执行SQL查询之前，先将SQL语句的结构固定下来，并将用户输入的参数作为独立的变量处理的方法。具体来说，预编译的SQL语句会先提交给数据库进行编译，生成一个执行计划，然后在执行时再将参数传递给这个执行计划。</p>
+</blockquote>
+<p>所以重点是结构确定了，说简单点就是已经把命令执行完一大半了，就差个参数然后把结果给你了。所以参数是单独处理的！而非拼接然后第二次执行 sql 语句，注入自然是无效的。</p>
+<h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><p><font color="green">这里以是否预编译语句连接数据库为例，为了方便测试写在main函数里。如果需要传参也是一样的写在doget里就好了</font></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[]args)</span> <span class="keyword">throws</span> ClassNotFoundException, SQLException &#123;</span><br><span class="line">    <span class="comment">//加载数据库驱动</span></span><br><span class="line">    Class.forName(<span class="string">&quot;com.mysql.cj.jdbc.Driver&quot;</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//获取数据库连接</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> <span class="string">&quot;jdbc:mysql://localhost:3307/class_1&quot;</span>;</span><br><span class="line">    <span class="type">String</span> <span class="variable">username</span> <span class="operator">=</span> <span class="string">&quot;root&quot;</span>;</span><br><span class="line">    <span class="type">String</span> <span class="variable">password</span> <span class="operator">=</span> <span class="string">&quot;password&quot;</span>;</span><br><span class="line">    <span class="type">Connection</span> <span class="variable">connection</span> <span class="operator">=</span> DriverManager.getConnection(url, username, password);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 预编译安全写法</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line"><span class="comment">//        String sql = &quot;SELECT * FROM news where id=?&quot;;</span></span><br><span class="line"><span class="comment">//        try(PreparedStatement preparedStatement = connection.prepareStatement(sql))&#123;</span></span><br><span class="line"><span class="comment">//            // 设置参数，防止SQL注入攻击</span></span><br><span class="line"><span class="comment">//            preparedStatement.setString(1,&quot;s&quot;);</span></span><br><span class="line"><span class="comment">//            ResultSet resultSet = preparedStatement.executeQuery();</span></span><br><span class="line"><span class="comment">//            while (resultSet.next()) &#123;</span></span><br><span class="line"><span class="comment">//                int id = resultSet.getInt(&quot;id&quot;);</span></span><br><span class="line"><span class="comment">//                String name = resultSet.getString(&quot;title&quot;);</span></span><br><span class="line"><span class="comment">//                String author=resultSet.getString(&quot;author&quot;);</span></span><br><span class="line"><span class="comment">//                String content=resultSet.getString(&quot;content&quot;);</span></span><br><span class="line"><span class="comment">//                String img=resultSet.getString(&quot;img&quot;);</span></span><br><span class="line"><span class="comment">//                System.out.println(&quot;-----------------------&quot;);</span></span><br><span class="line"><span class="comment">//                System.out.println(id);</span></span><br><span class="line"><span class="comment">//                System.out.println(name);</span></span><br><span class="line"><span class="comment">//                System.out.println(author);</span></span><br><span class="line"><span class="comment">//                System.out.println(content);</span></span><br><span class="line"><span class="comment">//                System.out.println(img);</span></span><br><span class="line"><span class="comment">//            &#125;</span></span><br><span class="line"><span class="comment">//            //关闭数据库连接</span></span><br><span class="line"><span class="comment">//            resultSet.close();</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 不安全写法</span></span><br><span class="line"><span class="comment">     * */</span></span><br><span class="line">    <span class="comment">//sql语句</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">sql</span> <span class="operator">=</span> <span class="string">&quot;SELECT * FROM news where id=1&quot;</span>;</span><br><span class="line">    <span class="type">Statement</span> <span class="variable">statement</span> <span class="operator">=</span> connection.createStatement();</span><br><span class="line">    <span class="type">ResultSet</span> <span class="variable">resultSet</span> <span class="operator">=</span> statement.executeQuery(sql);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//遍历处理数据库集</span></span><br><span class="line">    <span class="keyword">while</span> (resultSet.next()) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">id</span> <span class="operator">=</span> resultSet.getInt(<span class="string">&quot;id&quot;</span>);</span><br><span class="line">        <span class="type">String</span> <span class="variable">name</span> <span class="operator">=</span> resultSet.getString(<span class="string">&quot;title&quot;</span>);</span><br><span class="line">        String author=resultSet.getString(<span class="string">&quot;author&quot;</span>);</span><br><span class="line">        String content=resultSet.getString(<span class="string">&quot;content&quot;</span>);</span><br><span class="line">        String img=resultSet.getString(<span class="string">&quot;img&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;-----------------------&quot;</span>);</span><br><span class="line">        System.out.println(id);</span><br><span class="line">        System.out.println(name);</span><br><span class="line">        System.out.println(author);</span><br><span class="line">        System.out.println(content);</span><br><span class="line">        System.out.println(img);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//关闭数据库连接</span></span><br><span class="line">    resultSet.close();</span><br><span class="line">    statement.close();</span><br><span class="line">    connection.close();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>编译与非编译写法运行结果分别如下所示：</strong><br><strong>编译：</strong><br><img src="https://imgproxy.hfqing.top/image/?url=https://p.cldisk.com/star3/origin/4664b6181ae9c3006cc462f7d19159f0.png" alt="安全写法"><br><strong>不编译：</strong><br><img src="https://imgproxy.hfqing.top/image/?url=https://p.cldisk.com/star3/origin/69ccd436d272295d85dc110eebc9fbcc.png" alt="不安全写法"></p>
+<h3 id="安全问题"><a href="#安全问题" class="headerlink" title="安全问题"></a>安全问题</h3><p><strong>1、</strong> 课上讲的就一个是否预编译预防 sql 注入</p>
+<hr>
+<h2 id="Filter"><a href="#Filter" class="headerlink" title="Filter"></a>Filter</h2><blockquote>
+<p>过滤器，顾名思义就是过滤作用，在一个请求发送到服务器时，得先经过过滤器（如果有），然后才能到达处理函数。这让过滤器可以完成很多操作，比如身份识别，登录控制，权限管理，过滤敏感词汇等。<br>具体操作就是把包抓到，进行修改然后放行，或者请求拦截返回。</p>
+</blockquote>
+<table><tr><td bgcolor=DarkSeaGreen>知识点</td></tr></table>
+
+<p><strong>1、</strong> 实现过滤器需要写上注释 <code>@WebFilter(&quot;/path&quot;)</code> 并实现 <code>Filter</code> 接口在 <code>doFilter</code> 方法里面进行过滤等操作。</p>
+<p><strong>2、</strong> 以身份验证为例，可以拿 cookie 里面的值来判断是否是管理员（虽然并不安全）。当然请求包里的所有数据都是能拿到的，可以支持很细化的过滤操作。</p>
+<p><strong>3、</strong> 可以对所有路径进行过滤： <code>@WebFilter(&quot;/*&quot;)</code>，那也意味着过滤可以又多层，只要把请求下放。</p>
+<h3 id="Code-2"><a href="#Code-2" class="headerlink" title="Code"></a>Code</h3><p><font color="green">这里两层过滤分别进行-身份识别-和-xss过滤-为例</font></p>
+<p><strong>第一层过滤：过滤非管理员用户（adminFilter）</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebFilter(&quot;/*&quot;)</span><span class="comment">//所有路径都检测一下是否是管理员</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">adminFilter</span> <span class="keyword">implements</span> <span class="title class_">Filter</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">(FilterConfig filterConfig)</span> <span class="keyword">throws</span> ServletException &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;---Filter:path:/*：启动成功——init&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">doFilter</span><span class="params">(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)</span> <span class="keyword">throws</span> IOException, ServletException &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;---Filter:path:/*：开始过滤——doFilter&quot;</span>);</span><br><span class="line">        <span class="comment">//两步，判断与放行</span></span><br><span class="line">        HttpServletRequest req=(HttpServletRequest)servletRequest;</span><br><span class="line">        HttpServletResponse rsp=(HttpServletResponse) servletResponse;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//获取Cookies</span></span><br><span class="line">        Cookie[] cookies = req.getCookies();</span><br><span class="line">        <span class="type">String</span> <span class="variable">userId</span> <span class="operator">=</span> <span class="string">&quot;admin&quot;</span>;</span><br><span class="line">        <span class="keyword">if</span> (cookies != <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="type">boolean</span> flag=<span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">for</span> (Cookie cookie : cookies)&#123;</span><br><span class="line">                <span class="comment">//查找名为&quot;userId&quot;的cookie</span></span><br><span class="line">                <span class="keyword">if</span> (Objects.equals(cookie.getName(), <span class="string">&quot;userId&quot;</span>) &amp;&amp; Objects.equals(cookie.getValue(), <span class="string">&quot;admin&quot;</span>)) &#123;</span><br><span class="line">                    flag=<span class="literal">true</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(flag)&#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;---Filter:path:/*：欢迎管理员——doFilter&quot;</span>);</span><br><span class="line">                <span class="comment">/*操作*/</span></span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                System.out.println(<span class="string">&quot;---Filter:path:/*：不是管理员——doFilter&quot;</span>);</span><br><span class="line">                <span class="comment">/*操作*/</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//下放</span></span><br><span class="line">            filterChain.doFilter(req,rsp);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">destroy</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;---Filter:path:/*：结束过滤——destroy&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>第二层过滤：过滤xss用户（xssFilter）</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebFilter(filterName = &quot;xss&quot;,value = &quot;/xss&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">xssFilter</span> <span class="keyword">implements</span> <span class="title class_">Filter</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">init</span><span class="params">(FilterConfig filterConfig)</span> <span class="keyword">throws</span> ServletException &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;--Filter:path:/xss：启动成功——init&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">doFilter</span><span class="params">(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain)</span> <span class="keyword">throws</span> IOException, ServletException &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;--Filter:path:/xss：开始过滤——doFilter&quot;</span>);</span><br><span class="line">        <span class="comment">//两步，判断与放行</span></span><br><span class="line">        HttpServletRequest req=(HttpServletRequest)servletRequest;</span><br><span class="line">        HttpServletResponse rep=(HttpServletResponse)servletResponse;</span><br><span class="line">        <span class="type">String</span> <span class="variable">payload</span> <span class="operator">=</span> req.getParameter(<span class="string">&quot;payload&quot;</span>);</span><br><span class="line">        <span class="comment">//1、判断(大小写不敏感</span></span><br><span class="line">        <span class="keyword">if</span>(payload.toLowerCase().contains(<span class="string">&quot;&lt;script&gt;&quot;</span>))&#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;--Filter:path:/xss：XSS——doFilter&quot;</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="comment">//放行</span></span><br><span class="line">            System.out.println(<span class="string">&quot;--Filter:path:/xss：无注入——doFilter&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        filterChain.doFilter(req,rep);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">destroy</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;--Filter:path:/xss：结束过滤——destroy&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>Servlet路由：&#x2F;xss（xss）</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@WebServlet(&quot;/xss&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">xss</span> <span class="keyword">extends</span> <span class="title class_">HttpServlet</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">        resp.getWriter().append(<span class="string">&quot;&lt;h1&gt;hello Filter&lt;/h1&gt;&quot;</span>);</span><br><span class="line">        System.out.println(<span class="string">&quot;-web:path:/xss：hello&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>测试如图</strong></p>
+<p><img src="https://imgproxy.hfqing.top/image/?url=https://p.cldisk.com/star3/origin/26c8dc45a833430cc9ac2db5648acacc.png" alt="身份鉴权"></p>
+<h3 id="安全问题-1"><a href="#安全问题-1" class="headerlink" title="安全问题"></a>安全问题</h3><p><strong>1、</strong> 作为一个“过滤器”不安全的时候可能就只有程序员过滤不完全，有逻辑漏洞的时候了</p>
+<hr>
+<h2 id="Listener"><a href="#Listener" class="headerlink" title="Listener"></a>Listener</h2><blockquote>
+<p>Listener 是 Java Servlet 规范中的一部分，它提供了一种机制，使开发者能够编写监听器类来监听容器事件，并在事件发生时执行相应的逻辑。<br>下面是常见的三种类型，由于是简单了解，所以只演示<code>HttpSessionListener（会话监听器）</code>的简单监听。</p>
+</blockquote>
+<table><tr><td bgcolor=DarkSeaGreen>知识点</td></tr></table>
+
+<p><strong>1、</strong> 常见的有三种 Listener</p>
+<ul>
+<li>ServletContextListener（上下文监听器）：用于监听 Web 应用程序的启动和关闭事件。</li>
+<li>HttpSessionListener（会话监听器）：用于监听会话的创建和销毁事件。</li>
+<li>ServletRequestListener（请求监听器）：用于监听请求的创建和销毁事件。</li>
+</ul>
+<h3 id="Code-3"><a href="#Code-3" class="headerlink" title="Code"></a>Code</h3><p><font color="green">这里附上监听器和创建&#x2F;销毁监听器的关键代码</font></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 监听器</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@WebListener</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">ListenSession</span> <span class="keyword">implements</span> <span class="title class_">HttpSessionListener</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">sessionCreated</span><span class="params">(HttpSessionEvent httpSessionEvent)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;---Listener:监听到了session创建---&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">sessionDestroyed</span><span class="params">(HttpSessionEvent httpSessionEvent)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;---Listener:监听到了session销毁---&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 销毁监听器</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;--Listener:销毁Session---&quot;</span>);</span><br><span class="line">    req.getSession().invalidate();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 创建监听器</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title function_">doGet</span><span class="params">(HttpServletRequest req, HttpServletResponse resp)</span> <span class="keyword">throws</span> ServletException, IOException &#123;</span><br><span class="line">    <span class="comment">//创建Session</span></span><br><span class="line">    System.out.println(<span class="string">&quot;--Listener:创建Session---&quot;</span>);</span><br><span class="line">    req.getSession();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>测试结果</strong><br><img src="https://imgproxy.hfqing.top/image/?url=https://p.cldisk.com/star3/origin/904de4483473df3be35514c347640b69.png" alt="监听测试"></p>
+<hr>
+<h2 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h2><blockquote>
+<p>Java反射是一种强大的机制，允许程序在运行时动态地获取类的结构信息（如字段、方法、构造函数等），并对其进行操作。反射广泛应用于框架设计（如Spring的依赖注入）和动态代理等场景。<br>具体到 code 里就是一个对象的class类，<code>Person.class</code></p>
+</blockquote>
+<table><tr><td bgcolor=DarkSeaGreen>知识点</td></tr></table>
+
+<p><strong>1、</strong> 反射其实和 mysql 的数据库 <code>information_schema</code> 很像，里面记录了所有的信息，而 java 提供了很多方法供你方便地拿取与调用而非敲搜索语句（），比如一个类，你可以通过反射获得这个类的所有信息，包括成员方法啊，构造方法啊，成员变量，当然也可以进行调用</p>
+<p><strong>2、</strong> 不看具体方法名而直接调用等特征让反射普遍用于框架设计或需要动态调整的场景里</p>
+<p><strong>3、</strong> 如果把存反编译数据的文件打开会发现是如图的乱码</p>
+<p><img src="https://imgproxy.hfqing.top/image/?url=https://p.cldisk.com/star3/origin/a2ccbcfb5db360c7cd5e27657a70f71d.png" alt="反序列显示乱码"></p>
+<h3 id="Code-4"><a href="#Code-4" class="headerlink" title="Code"></a>Code</h3><p><font color="green">由于几乎都是理论知识，直接在code里说明方法的作用</font><br><strong>如何获取class</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 如何获取Class实例呢</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">// 1、通过完整路径</span></span><br><span class="line">Class p1=Class.forName(<span class="string">&quot;com.classthree.demo_01.reflect.Person&quot;</span>);</span><br><span class="line"><span class="comment">// 2、通过类名</span></span><br><span class="line">Class p2=Person.class;</span><br><span class="line"><span class="comment">// 3、通过类的实例</span></span><br><span class="line">Class p3=(<span class="keyword">new</span> <span class="title class_">Person</span>()).getClass();</span><br><span class="line"><span class="comment">// 4、通过类加载器</span></span><br><span class="line">ClassLoader loader=ClassLoader.getSystemClassLoader();</span><br><span class="line">Class p4=loader.loadClass(<span class="string">&quot;com.classthree.demo_01.reflect.Person&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//验证</span></span><br><span class="line">System.out.println(p1==p2);<span class="comment">//true</span></span><br><span class="line">System.out.println(p2==p3);<span class="comment">//true</span></span><br><span class="line">System.out.println(p3==p4);<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+
+<p><strong>如何-获得&#x2F;修改-成员变量（Field）</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Class获取成员方法</span></span><br><span class="line"><span class="comment"> * 共有就是共有，连默认都不算~</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">Class cls= Person.class;</span><br><span class="line"><span class="comment">// 获取公共成员变量数组</span></span><br><span class="line">Field[] g_fields=cls.getFields();</span><br><span class="line">System.out.println(<span class="string">&quot;---------------&quot;</span>);</span><br><span class="line">System.out.println(Arrays.toString(g_fields));</span><br><span class="line">System.out.println(<span class="string">&quot;---------------&quot;</span>);</span><br><span class="line"><span class="comment">// 获取所有成员变量数组</span></span><br><span class="line">Field[] a_fields=cls.getDeclaredFields();</span><br><span class="line">System.out.println(Arrays.toString(a_fields));</span><br><span class="line">System.out.println(<span class="string">&quot;---------------&quot;</span>);</span><br><span class="line"><span class="comment">// 获取单个公共成员变量</span></span><br><span class="line">Field g_field=cls.getField(<span class="string">&quot;name&quot;</span>);</span><br><span class="line">System.out.println(g_field);</span><br><span class="line">System.out.println(<span class="string">&quot;---------------&quot;</span>);</span><br><span class="line"><span class="comment">// 获取单个(所有)成员变量</span></span><br><span class="line">Field a_field=cls.getDeclaredField(<span class="string">&quot;nums&quot;</span>);</span><br><span class="line">System.out.println(a_field);</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 前面是获取，那么更改呢</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">// 1、get</span></span><br><span class="line">Person per=<span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line">per.age=<span class="number">12</span>;</span><br><span class="line">Field f=cls.getDeclaredField(<span class="string">&quot;age&quot;</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;former:&quot;</span>+f.get(per));<span class="comment">//former:12</span></span><br><span class="line"><span class="comment">//2、set</span></span><br><span class="line">f.set(per,<span class="number">22</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;end:&quot;</span>+f.get(per));<span class="comment">//end:22</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>如何-获得&#x2F;使用-构造方法（Constructor）</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 构造方法</span></span><br><span class="line"><span class="comment"> * set并获得实例</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">Class cls= Person.class;</span><br><span class="line"><span class="comment">// 1、所有公共构造方法</span></span><br><span class="line">Constructor[] con1=cls.getConstructors();</span><br><span class="line">System.out.println(Arrays.toString(con1));</span><br><span class="line">System.out.println(<span class="string">&quot;---------------&quot;</span>);</span><br><span class="line"><span class="comment">// 2、所有构造方法</span></span><br><span class="line">Constructor[] con2=cls.getDeclaredConstructors();</span><br><span class="line">System.out.println(Arrays.toString(con2));</span><br><span class="line">System.out.println(<span class="string">&quot;---------------&quot;</span>);</span><br><span class="line"><span class="comment">// 3、单个公共构造方法</span></span><br><span class="line">Constructor con3=cls.getConstructor();<span class="comment">//无参</span></span><br><span class="line">Person p1= (Person) con3.newInstance();</span><br><span class="line">System.out.println(<span class="string">&quot;---------------&quot;</span>);</span><br><span class="line"><span class="comment">// 4、单个构造方法，私有的话需要true</span></span><br><span class="line">Constructor con4=cls.getDeclaredConstructor(String.class);<span class="comment">//一参</span></span><br><span class="line">con4.setAccessible(<span class="literal">true</span>);</span><br><span class="line"><span class="comment">// 利用构造方法构造出对象</span></span><br><span class="line">Person p2= (Person) con4.newInstance(<span class="string">&quot;Nailu&quot;</span>);</span><br><span class="line">System.out.println(<span class="string">&quot;---------------&quot;</span>);</span><br></pre></td></tr></table></figure>
+
+<p><strong>如何-获得&#x2F;使用-成员方法（Method）</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获得成员方法</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">Class cls= Person.class;</span><br><span class="line"><span class="comment">// 获取公共成员方法数组   注意：包括继承的！</span></span><br><span class="line">Method[] g_methods=cls.getMethods();</span><br><span class="line">System.out.println(<span class="string">&quot;---------------&quot;</span>);</span><br><span class="line">System.out.println(Arrays.toString(g_methods));</span><br><span class="line">System.out.println(<span class="string">&quot;---------------&quot;</span>);</span><br><span class="line"><span class="comment">// 获取所有成员方法数组</span></span><br><span class="line">Method[] a_methods=cls.getDeclaredMethods();</span><br><span class="line">System.out.println(Arrays.toString(a_methods));</span><br><span class="line">System.out.println(<span class="string">&quot;---------------&quot;</span>);</span><br><span class="line"><span class="comment">// 获取单个公共成员方法</span></span><br><span class="line">Method g_method=cls.getMethod(<span class="string">&quot;pub_test&quot;</span>,<span class="type">int</span>.class);</span><br><span class="line">System.out.println(g_method);</span><br><span class="line">System.out.println(<span class="string">&quot;---------------&quot;</span>);</span><br><span class="line">Method g_method2=cls.getMethod(<span class="string">&quot;pub_test&quot;</span>);<span class="comment">//无参</span></span><br><span class="line">System.out.println(g_method2);</span><br><span class="line">System.out.println(<span class="string">&quot;---------------&quot;</span>);</span><br><span class="line"><span class="comment">// 获取单个(所有)成员方法</span></span><br><span class="line">Method a_method=cls.getDeclaredMethod(<span class="string">&quot;pub_test&quot;</span>,<span class="type">int</span>.class,String.class);</span><br><span class="line">System.out.println(a_method);</span><br><span class="line">System.out.println(<span class="string">&quot;---------------&quot;</span>);</span><br><span class="line">Method a_method2=cls.getDeclaredMethod(<span class="string">&quot;pub_test&quot;</span>,String.class,<span class="type">int</span>.class);</span><br><span class="line">System.out.println(a_method2);</span><br><span class="line">System.out.println(<span class="string">&quot;---------------&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 方法的执行</span></span><br><span class="line"><span class="comment"> * 浅浅写几个</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line">Person p1=<span class="keyword">new</span> <span class="title class_">Person</span>();</span><br><span class="line">a_method2.invoke(p1,<span class="string">&quot;456&quot;</span>,<span class="number">123</span>);<span class="comment">//公共双参方法456+123</span></span><br></pre></td></tr></table></figure>
+<p><strong>还有就是类Person</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> String name;</span><br><span class="line">    <span class="type">int</span> age;</span><br><span class="line">    <span class="keyword">protected</span> String gender;</span><br><span class="line">    <span class="keyword">private</span> String nums;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Person</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;公共无参&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Person</span><span class="params">(String name, <span class="type">int</span> age)</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;公共二参：&quot;</span>+name+<span class="string">&quot;+&quot;</span>+age);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Person</span><span class="params">(String name)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;私有一参：&quot;</span>+name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">get</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Person&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;name=&#x27;&quot;</span> + name + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, age=&quot;</span> + age +</span><br><span class="line">                <span class="string">&quot;, gender=&#x27;&quot;</span> + gender + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, nums=&#x27;&quot;</span> + nums + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">pri_test</span><span class="params">(<span class="type">int</span> a)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;私有单参方法&quot;</span>+a);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">pri_test</span><span class="params">(<span class="type">int</span> a,String b)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;私有双参方法&quot;</span>+a+<span class="string">&quot;+&quot;</span>+b);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">pub_test</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;公共无参方法&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">pub_test</span><span class="params">(<span class="type">int</span> a)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;公共单参方法&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">pub_test</span><span class="params">(<span class="type">int</span> a,String b)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;公共双参方法&quot;</span>+a+<span class="string">&quot;+&quot;</span>+b);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">pub_test</span><span class="params">(String a,<span class="type">int</span> b)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;公共双参方法&quot;</span>+a+<span class="string">&quot;+&quot;</span>+b);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Serializer"><a href="#Serializer" class="headerlink" title="Serializer"></a>Serializer</h2><blockquote>
+<p>Java序列化是将Java对象转换为字节序列的过程，而Java反序列化是将字节序列恢复为Java对象的过程。</p>
+</blockquote>
+<table><tr><td bgcolor=DarkSeaGreen>知识点</td></tr></table>
+
+<p><strong>1、</strong> 序列化就是把代码变成字节形式，易于保存（可保存到文件或数据库里）和网络传输</p>
+<p><strong>2、</strong> 反序列化漏洞，顾名思义就是在反序列化的时候出现的漏洞。比如网站反序列化你的序列化文件给你，那么就可以自己构造含有恶意代码的对象。（恶意代码可以在构造函数里，也可以在静态代码块里比如toString，还可以在方法里）</p>
+<h3 id="Code-5"><a href="#Code-5" class="headerlink" title="Code"></a>Code</h3><p><font color="green">这里先讲普遍的方式，在对象里加恶意代码。下面还有课上讲的利用特定类的配合进行带出</font></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 想要序列化这个对象就得先实现 Serializable 这个标记接口</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Person</span> <span class="keyword">implements</span> <span class="title class_">Serializable</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> String name;</span><br><span class="line">    <span class="type">int</span> age;</span><br><span class="line">    <span class="keyword">protected</span> String gender;</span><br><span class="line">    <span class="keyword">private</span> String nums;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Person</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;公共无参&quot;</span>);</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 无参构造函数测试 ac</span></span><br><span class="line"><span class="comment">         */</span></span><br><span class="line"><span class="comment">//        try &#123;</span></span><br><span class="line"><span class="comment">//            Runtime.getRuntime().exec(&quot;calc&quot;);</span></span><br><span class="line"><span class="comment">//        &#125; catch (IOException e) &#123;</span></span><br><span class="line"><span class="comment">//            throw new RuntimeException(e);</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="title function_">Person</span><span class="params">(String name, <span class="type">int</span> age)</span> &#123;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 1、构造函数代码块隐式执行</span></span><br><span class="line"><span class="comment">         * 前提是-序列化的对象-创建时调用的是这个构造方法</span></span><br><span class="line"><span class="comment">         * =反序列化的时候弹窗</span></span><br><span class="line"><span class="comment">         * */</span></span><br><span class="line"><span class="comment">//        try &#123;</span></span><br><span class="line"><span class="comment">//            Runtime.getRuntime().exec(&quot;calc&quot;);</span></span><br><span class="line"><span class="comment">//        &#125; catch (IOException e) &#123;</span></span><br><span class="line"><span class="comment">//            throw new RuntimeException(e);</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line">        <span class="built_in">this</span>.name=name;</span><br><span class="line">        <span class="built_in">this</span>.age=age;</span><br><span class="line">        System.out.println(<span class="string">&quot;公共二参：&quot;</span>+name+<span class="string">&quot;+&quot;</span>+age);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="title function_">Person</span><span class="params">(String name)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;私有一参：&quot;</span>+name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">toString</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="comment">/**</span></span><br><span class="line"><span class="comment">         * 2、静态代码块隐式执行</span></span><br><span class="line"><span class="comment">         * =打印的时候弹窗</span></span><br><span class="line"><span class="comment">         * */</span></span><br><span class="line"><span class="comment">//        try &#123;</span></span><br><span class="line"><span class="comment">//            Runtime.getRuntime().exec(&quot;calc&quot;);</span></span><br><span class="line"><span class="comment">//        &#125; catch (IOException e) &#123;</span></span><br><span class="line"><span class="comment">//            throw new RuntimeException(e);</span></span><br><span class="line"><span class="comment">//        &#125;</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Person&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;name=&#x27;&quot;</span> + name + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, age=&quot;</span> + age +</span><br><span class="line">                <span class="string">&quot;, gender=&#x27;&quot;</span> + gender + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, nums=&#x27;&quot;</span> + nums + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">get</span><span class="params">()</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Person&#123;&quot;</span> +</span><br><span class="line">                <span class="string">&quot;name=&#x27;&quot;</span> + name + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, age=&quot;</span> + age +</span><br><span class="line">                <span class="string">&quot;, gender=&#x27;&quot;</span> + gender + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&quot;, nums=&#x27;&quot;</span> + nums + <span class="string">&#x27;\&#x27;&#x27;</span> +</span><br><span class="line">                <span class="string">&#x27;&#125;&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">pri_test</span><span class="params">(<span class="type">int</span> a)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;私有单参方法&quot;</span>+a);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">pri_test</span><span class="params">(<span class="type">int</span> a,String b)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;私有双参方法&quot;</span>+a+<span class="string">&quot;+&quot;</span>+b);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">pub_test</span><span class="params">()</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;公共无参方法&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">pub_test</span><span class="params">(<span class="type">int</span> a)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;公共单参方法&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">pub_test</span><span class="params">(<span class="type">int</span> a,String b)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;公共双参方法&quot;</span>+a+<span class="string">&quot;+&quot;</span>+b);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">pub_test</span><span class="params">(String a,<span class="type">int</span> b)</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;公共双参方法&quot;</span>+a+<span class="string">&quot;+&quot;</span>+b);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 原理是竞争反序列化函数里面的一个方法 readObject 从而执行</span></span><br><span class="line"><span class="comment">     * 反编译代码测试</span></span><br><span class="line"><span class="comment">     * =反序列化的时候弹窗</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">readObject</span><span class="params">(ObjectInputStream ois)</span> <span class="keyword">throws</span> IOException, ClassNotFoundException &#123;</span><br><span class="line">        <span class="comment">// 执行恶意代码</span></span><br><span class="line">        Runtime.getRuntime().exec(<span class="string">&quot;notepad&quot;</span>);</span><br><span class="line">        <span class="comment">//指向正确的readObject,这样就可以正常反序列化（了解）</span></span><br><span class="line">        ois.defaultReadObject();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>利用 HashMap 类的方法 readobject（）结合 URL 类带出</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 当入口参数包含 readObject 也会同重写对象 readObject 方法一样执行</span></span><br><span class="line"><span class="comment"> * 比如HashMap</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * 方法调用如下：</span></span><br><span class="line"><span class="comment"> * Gadget Chain:</span></span><br><span class="line"><span class="comment"> *  HashMap.readobject()</span></span><br><span class="line"><span class="comment"> *   HashMap.putVal()</span></span><br><span class="line"><span class="comment"> *    HashMap.hakh()</span></span><br><span class="line"><span class="comment"> *     URL.hashCode()   访问 url 路径</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line">HashMap&lt;URL,Integer&gt; map_=<span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">URL url=<span class="keyword">new</span> <span class="title class_">URL</span>(<span class="string">&quot;http://temple.dnslog.cn&quot;</span>);</span><br><span class="line">map_.put(url,<span class="number">1</span>);</span><br><span class="line">String path2=<span class="string">&quot;url.txt&quot;</span>;</span><br><span class="line"><span class="comment">//序列化与反序列化</span></span><br><span class="line">Serializable(map_,path2);</span><br><span class="line">UnSerializable(path2);</span><br></pre></td></tr></table></figure>
+
+<h3 id="安全问题-2"><a href="#安全问题-2" class="headerlink" title="安全问题"></a>安全问题</h3><p><strong>1、</strong> 上面就是围绕漏洞来展开的，但是是可以防御的。比如</p>
+<blockquote>
+<p>不使用原生的序列化<br>使用更安全的json或xml<br>使用白名单<br>输入验证<br>最小化使用（尽量不使用）<br>权限最小化（确保应用程序以最小的必要权限运行）等<br>及时更新程序以及安装补丁</p>
+</blockquote>
+<p>（如有不恰当的地方欢迎指正哦 ~o(●’◡’●)o）</p>
+<hr>
+<p><strong><font color="red">参考blogs：</font></strong></p>
+<p>【<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43610304/article/details/102175852">servlet的映射与在idea中的使用</a>】</p>
+<p>【<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_53316135/article/details/118978304">JDBC 驱动加载原理解析</a>】</p>
+<p>【<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_21484461/article/details/134324225">【Java 进阶篇】Java Listener 使用详解</a>】</p>
+</article>
+<div class="article-footer">
+    <section id="license">
+      <div class="header"><span>许可协议</span></div>
+      <div class="body"><p>本文采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可协议，转载请注明出处。</p>
+</div>
+    </section>
+    
+
+</div>
+
+<div class="related-wrap" id="read-next"><section class="body"><div class="item" id="prev"></div><div class="item" id="next"><div class="note">较早文章</div><a href="/2025/08/02/%E5%B0%8F%E8%BF%AA23%E5%B9%B4-28~31%E2%80%94%E2%80%94js%E7%AE%80%E5%8D%95%E5%9B%9E%E9%A1%BE/">小迪23年-28~31——js简单回顾</a></div></section></div>
+
+
+
+
+  <div class="related-wrap md-text" id="comments">
+    <section class='header cmt-title cap theme'>
+      <p>欢迎讨论！不过评论并没有做图床，限制也比较大，担待担待~</p>
+
+    </section>
+    <section class='body cmt-body waline'>
+      
+
+<div id="waline_container" class="waline_thread"><svg class="loading" style="vertical-align:middle;fill:currentColor;overflow:hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg></div>
+
+    </section>
+  </div>
+
+
+
+<footer class="page-footer footnote"><hr><div class="text"><p>本站由 <a href="/">轻抚酸</a> 使用 <a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.33.1">Stellar 1.33.1</a> 主题创建。<br>本博客所有文章除特别声明外，均采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处。</p>
+</div></footer>
+<div class="main-mask" onclick="sidebar.dismiss()"></div></div><aside class="l_right">
+<div class="widgets">
+
+
+
+<widget class="widget-wrapper toc" id="data-toc" collapse="false"><div class="widget-header dis-select"><span class="name">本文目录</span><a class="cap-action" onclick="sidebar.toggleTOC()" ><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg></a></div><div class="widget-body"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8E%9F%E7%94%9F%E7%B1%BB"><span class="toc-text">原生类</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Servlet"><span class="toc-text">Servlet</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Code"><span class="toc-text">Code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#JDBC"><span class="toc-text">JDBC</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-1"><span class="toc-text">Code</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98"><span class="toc-text">安全问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Filter"><span class="toc-text">Filter</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-2"><span class="toc-text">Code</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98-1"><span class="toc-text">安全问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Listener"><span class="toc-text">Listener</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-3"><span class="toc-text">Code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8D%E5%B0%84"><span class="toc-text">反射</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-4"><span class="toc-text">Code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Serializer"><span class="toc-text">Serializer</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-5"><span class="toc-text">Code</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98-2"><span class="toc-text">安全问题</span></a></li></ol></li></ol></li></ol></div><div class="widget-footer"><a class="top" onclick="util.scrollTop()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5"><path stroke-linejoin="round" d="m9 15.5l3-3l3 3m-6-4l3-3l3 3"/><path d="M7 3.338A9.95 9.95 0 0 1 12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12c0-1.821.487-3.53 1.338-5"/></g></svg><span>回到顶部</span></a><a class="buttom" onclick="util.scrollComment()"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><!-- Icon from Solar by 480 Design - https://creativecommons.org/licenses/by/4.0/ --><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="M8 10.5h8M8 14h5.5M17 3.338A9.95 9.95 0 0 0 12 2C6.477 2 2 6.477 2 12c0 1.6.376 3.112 1.043 4.453c.178.356.237.763.134 1.148l-.595 2.226a1.3 1.3 0 0 0 1.591 1.592l2.226-.596a1.63 1.63 0 0 1 1.149.133A9.96 9.96 0 0 0 12 22c5.523 0 10-4.477 10-10c0-1.821-.487-3.53-1.338-5"/></svg><span>参与讨论</span></a></div></widget>
+
+<widget class="widget-wrapper timeline"><div class="widget-header dis-select"><span class="name">说说</span></div><div class="widget-body fs14"><div class="tag-plugin timeline data-service ds-memos" data-api="https://s.dusays.com/api/v1/memo?creatorId=207"></div></div></widget>
+</div></aside><div class='float-panel'>
+  <button type='button' style='display:none' class='laptop-only rightbar-toggle mobile' onclick='sidebar.rightbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6h11m-11 6h11m-11 6h11M4 6h1v4m-1 0h2m0 8H4c0-1 2-2 2-3s-1-1.5-2-1"/></svg>
+  </button>
+  <button type='button' style='display:none' class='mobile-only leftbar-toggle mobile' onclick='sidebar.leftbar()'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 11c0-3.771 0-5.657 1.172-6.828C4.343 3 6.229 3 10 3h4c3.771 0 5.657 0 6.828 1.172C22 5.343 22 7.229 22 11v2c0 3.771 0 5.657-1.172 6.828C19.657 21 17.771 21 14 21h-4c-3.771 0-5.657 0-6.828-1.172C2 18.657 2 16.771 2 13z"/><path id="sep" stroke-linecap="round" d="M5.5 10h6m-5 4h4m4.5 7V3"/></g></svg>
+  </button>
+</div>
+</div><div class="scripts">
+
+
+<script type="text/javascript">
+  window.canonical = {"originalHost":null,"officialHosts":["localhost"],"encoded":""};
+  const ctx = {
+    date_suffix: {
+      just: `刚刚`,
+      min: `分钟前`,
+      hour: `小时前`,
+      day: `天前`,
+    },
+    root : `/`,
+    tag_plugins: {
+      chat: Object.assign({"api":"https://siteinfo.listentothewind.cn/api/v1"}),
+    }
+  };
+
+  // required plugins (only load if needs)
+  if (`local_search`) {
+    ctx.search = {};
+    ctx.search.service = `local_search`;
+    if (ctx.search.service == 'local_search') {
+      let service_obj = Object.assign({}, `{"field":"all","path":"/search.json","content":true,"skip_search":null,"sort":"-date"}`);
+      ctx.search[ctx.search.service] = service_obj;
+    }
+  }
+  const def = {
+    avatar: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/avatar/round/3442075.svg`,
+    cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
+    loading: `https://api.iconify.design/eos-icons:three-dots-loading.svg?color=%231cd0fd`,
+  };
+  const deps = {
+    jquery: `https://gcore.jsdelivr.net/npm/jquery@3.7/dist/jquery.min.js`,
+    marked: `https://gcore.jsdelivr.net/npm/marked@13.0/lib/marked.umd.min.js`,
+    lazyload: `/%5Bobject%20Object%5D`
+  }
+  
+
+</script>
+
+<script type="text/javascript">
+  
+  function RunItem() {
+    this.list = []; // 存放回调函数
+    this.start = () => {
+      for (var i = 0; i < this.list.length; i++) {
+        this.list[i].run();
+      }
+    };
+    this.push = (fn, name, setRequestAnimationFrame = true) => {
+      let myfn = fn
+      if (setRequestAnimationFrame) {
+        myfn = () => {
+          utils.requestAnimationFrame(fn)
+        }
+      }
+      var f = new Item(myfn, name);
+      this.list.push(f);
+    };
+    this.remove = (name) => {
+      for (let index = 0; index < this.list.length; index++) {
+        const e = this.list[index];
+        if (e.name == name) {
+          this.list.splice(index, 1);
+        }
+      }
+    }
+    // 构造一个可以run的对象
+    function Item(fn, name) {
+      // 函数名称
+      this.name = name || fn.name;
+      // run方法
+      this.run = () => {
+        try {
+          fn()
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    }
+  }
+
+  const utils = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    css: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    js: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      if (src.startsWith('/')) {
+        src = ctx.root + src.substring(1);
+      }
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function () {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    jq: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        utils.js(deps.jquery).then(fn)
+      } else {
+        fn()
+      }
+    },
+
+    onLoading: (el) => {
+      if (el) {
+        $(el).append('<div class="loading-wrap"><svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" stroke-opacity=".3" d="M12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="1.3s" values="60;0"/></path><path stroke-dasharray="15" stroke-dashoffset="15" d="M12 3C16.9706 3 21 7.02944 21 12"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.3s" values="15;0"/><animateTransform attributeName="transform" dur="1.5s" repeatCount="indefinite" type="rotate" values="0 12 12;360 12 12"/></path></g></svg></div>');
+      }
+    },
+    onLoadSuccess: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap').remove();
+      }
+    },
+    onLoadFailure: (el) => {
+      if (el) {
+        $(el).find('.loading-wrap svg').remove();
+        $(el).find('.loading-wrap').append('<svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path stroke-dasharray="60" stroke-dashoffset="60" d="M12 3L21 20H3L12 3Z"><animate fill="freeze" attributeName="stroke-dashoffset" dur="0.5s" values="60;0"/></path><path stroke-dasharray="6" stroke-dashoffset="6" d="M12 10V14"><animate fill="freeze" attributeName="stroke-dashoffset" begin="0.6s" dur="0.2s" values="6;0"/></path></g><circle cx="12" cy="17" r="1" fill="currentColor" fill-opacity="0"><animate fill="freeze" attributeName="fill-opacity" begin="0.8s" dur="0.4s" values="0;1"/></circle></svg>');
+        $(el).find('.loading-wrap').addClass('error');
+      }
+    },
+    request: (el, url, callback, onFailure) => {
+      const maxRetry = 3;
+      let retryCount = 0;
+
+      return new Promise((resolve, reject) => {
+        const load = () => {
+          utils.onLoading?.(el);
+
+          let timedOut = false;
+          const timeout = setTimeout(() => {
+            timedOut = true;
+            console.warn('[request] 超时:', url);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject('请求超时');
+            } else {
+              setTimeout(load, 1000);
+            }
+          }, 5000);
+
+          fetch(url).then(resp => {
+            if (timedOut) return;
+            clearTimeout(timeout);
+
+            if (!resp.ok) throw new Error('响应失败');
+            return resp;
+          }).then(data => {
+            if (timedOut) return;
+            utils.onLoadSuccess?.(el);
+            callback(data);
+            resolve(data);
+          }).catch(err => {
+            clearTimeout(timeout);
+            console.warn('[request] 错误:', err);
+
+            if (++retryCount >= maxRetry) {
+              utils.onLoadFailure?.(el);
+              onFailure?.();
+              reject(err);
+            } else {
+              setTimeout(load, 1000);
+            }
+          });
+        };
+
+        load();
+      });
+    },
+    requestWithoutLoading: (url, options = {}, maxRetry = 2, timeout = 5000) => {
+      return new Promise((resolve, reject) => {
+        let retryCount = 0;
+
+        const tryRequest = () => {
+          let timedOut = false;
+          const timer = setTimeout(() => {
+            timedOut = true;
+            if (++retryCount > maxRetry) reject('timeout');
+            else tryRequest();
+          }, timeout);
+
+          fetch(url, options)
+            .then(resp => {
+              clearTimeout(timer);
+              if (!resp.ok) throw new Error('bad response');
+              resolve(resp);
+            })
+            .catch(err => {
+              clearTimeout(timer);
+              if (++retryCount > maxRetry) reject(err);
+              else setTimeout(tryRequest, 500);
+            });
+        };
+
+        tryRequest();
+      });
+    },
+    /********************** requestAnimationFrame ********************************/
+    // 1、requestAnimationFrame 会把每一帧中的所有 DOM 操作集中起来，在一次重绘或回流中就完成，并且重绘或回流的时间间隔紧紧跟随浏览器的刷新频率，一般来说，这个频率为每秒60帧。
+    // 2、在隐藏或不可见的元素中，requestAnimationFrame 将不会进行重绘或回流，这当然就意味着更少的的 cpu，gpu 和内存使用量。
+    requestAnimationFrame: (fn) => {
+      if (!window.requestAnimationFrame) {
+        window.requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame;
+      }
+      window.requestAnimationFrame(fn)
+    },
+    dark: {},
+  };
+
+  // utils.dark.mode 当前模式 dark or light
+  // utils.dark.toggle() 暗黑模式触发器
+  // utils.dark.push(callBack[,"callBackName"]) 传入触发器回调函数
+  utils.dark.method = {
+    toggle: new RunItem(),
+  };
+  utils.dark = Object.assign(utils.dark, {
+    push: utils.dark.method.toggle.push,
+  });
+</script>
+<script>
+  const sidebar = {
+    leftbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    rightbar: () => {
+      if (l_body) {
+        l_body.toggleAttribute('rightbar');
+        l_body.removeAttribute('leftbar');
+      }
+    },
+    dismiss: () => {
+      if (l_body) {
+        l_body.removeAttribute('leftbar');
+        l_body.removeAttribute('rightbar');
+      }
+    },
+    toggleTOC: () => {
+      document.querySelector('#data-toc').classList.toggle('collapse');
+    }
+  }
+</script>
+<script type="text/javascript">
+  (() => {
+    const tagSwitchers = document.querySelectorAll('.tag-subtree.parent-tag > a > .tag-switcher-wrapper')
+    for (const tagSwitcher of tagSwitchers) {
+      tagSwitcher.addEventListener('click', (e) => {
+        const parent = e.target.closest('.tag-subtree.parent-tag')
+        parent.classList.toggle('expanded')
+        e.preventDefault()
+      })
+    }
+
+    // Get active tag from query string, then activate it.
+    const urlParams = new URLSearchParams(window.location.search)
+    const activeTag = urlParams.get('tag')
+    if (activeTag) {
+      let tag = document.querySelector(`.tag-subtree[data-tag="${activeTag}"]`)
+      if (tag) {
+        tag.querySelector('a').classList.add('active')
+        
+        while (tag) {
+          tag.classList.add('expanded')
+          tag = tag.parentElement.closest('.tag-subtree.parent-tag')
+        }
+      }
+    }
+  })()
+</script>
+
+<script async src="https://gcore.jsdelivr.net/npm/vanilla-lazyload@19.1/dist/lazyload.min.js"></script>
+<script>
+  // https://www.npmjs.com/package/vanilla-lazyload
+  // Set the options globally
+  // to make LazyLoad self-initialize
+  window.lazyLoadOptions = {
+    elements_selector: ".lazy",
+    callback_loaded: (el) => {
+      el.classList.add('loaded');
+      const wrapper = el.closest('.lazy-box');
+      const icon = wrapper?.querySelector('.lazy-icon');
+      if (icon) icon.remove();
+    }
+  };
+  // Listen to the initialization event
+  // and get the instance of LazyLoad
+  window.addEventListener(
+    "LazyLoad::Initialized",
+    function (event) {
+      window.lazyLoadInstance = event.detail.instance;
+    },
+    false
+  );
+  document.addEventListener('DOMContentLoaded', function () {
+    window.lazyLoadInstance?.update();
+  });
+
+  window.wrapLazyloadImages = (container) => {
+    if (typeof container === 'string') {
+      container = document.querySelector(container);
+    }
+    if (!container) return;
+    
+    const images = container.querySelectorAll('img');
+    images.forEach((img) => {
+      if (img.classList.contains('lazy')) return;
+
+      const src = img.getAttribute('src');
+      if (!src) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.className = 'lazy-box';
+
+      const newImg = img.cloneNode();
+      newImg.removeAttribute('src');
+      newImg.setAttribute('data-src', src);
+      newImg.classList.add('lazy');
+
+      const icon = document.createElement('div');
+      icon.className = 'lazy-icon';
+      if (def.loading) {
+        icon.style.backgroundImage = `url("${def.loading}")`;
+      }
+
+      wrapper.appendChild(newImg);
+      wrapper.appendChild(icon);
+
+      img.replaceWith(wrapper);
+    });
+
+    // 通知 LazyLoad 更新
+    if (window.lazyLoadInstance?.update) {
+      window.lazyLoadInstance.update();
+    }
+  }
+  
+</script>
+
+<!-- required -->
+<script src="/js/main.js?v=1.33.1" defer></script>
+
+<script type="text/javascript">
+  const applyTheme = (theme) => {
+    if (theme === 'auto') {
+      document.documentElement.removeAttribute('data-theme')
+    } else {
+      document.documentElement.setAttribute('data-theme', theme)
+    }
+
+    // applyThemeToGiscus(theme)
+  }
+
+  // FIXME: 这会导致无法使用 preferred_color_scheme 以外的主题
+  const applyThemeToGiscus = (theme) => {
+    // theme = theme === 'auto' ? 'preferred_color_scheme' : theme
+    const cmt = document.getElementById('giscus')
+    if (cmt) {
+      // This works before giscus load.
+      cmt.setAttribute('data-theme', theme)
+    }
+
+    const iframe = document.querySelector('#comments > section.giscus > iframe')
+    if (iframe) {
+      // This works after giscus loaded.
+      const src = iframe.src
+      const newSrc = src.replace(/theme=[\w]+/, `theme=${theme}`)
+      iframe.src = newSrc
+    }
+  }
+
+  const switchTheme = () => {
+    // light -> dark -> auto -> light -> ...
+    const currentTheme = document.documentElement.getAttribute('data-theme')
+    let newTheme;
+    switch (currentTheme) {
+      case 'light':
+        newTheme = 'dark'
+        break
+      case 'dark':
+        newTheme = 'auto'
+        break
+      default:
+        newTheme = 'light'
+    }
+    applyTheme(newTheme)
+    window.localStorage.setItem('Stellar.theme', newTheme)
+    utils.dark.mode = newTheme === 'auto' ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light") : newTheme;
+    utils.dark.method.toggle.start();
+
+    const messages = {
+      light: `切换到浅色模式`,
+      dark: `切换到深色模式`,
+      auto: `切换到跟随系统配色`,
+    }
+    hud?.toast?.(messages[newTheme])
+  }
+
+  (() => {
+    // Apply user's preferred theme, if any.
+    const theme = window.localStorage.getItem('Stellar.theme')
+    if (theme !== null) {
+      applyTheme(theme)
+    } else {
+      utils.dark.mode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    utils.dark.method.toggle.start();
+  })()
+</script>
+
+
+<!-- optional -->
+
+  <script type="module">
+  import { init } from 'https://unpkg.com/@waline/client@v3/dist/waline.js';
+
+  const el = document.getElementById('waline_container');
+  util.viewportLazyload(el, load_waline, false);
+
+  function load_waline(){
+    if (!el) return;
+
+    utils.css('https://unpkg.com/@waline/client@v3/dist/waline.css');
+    utils.css('https://gcore.jsdelivr.net/npm/@waline/client@3.1/dist/waline-meta.css');
+
+    const path = el.getAttribute('comment_id') ?? decodeURI(window.location.pathname);
+    const waline = init(Object.assign({"js":"https://unpkg.com/@waline/client@v3/dist/waline.js","css":"https://unpkg.com/@waline/client@v3/dist/waline.css","meta_css":"https://gcore.jsdelivr.net/npm/@waline/client@3.1/dist/waline-meta.css","serverURL":"https://comment.hfqing.top","commentCount":true,"pageview":false,"search":false,"reaction":true,"comment":true,"locale":{"level0":"练气","level1":"筑基","level2":"金丹","level3":"元婴","level4":"化神","level5":"合体","level6":"渡劫","level7":"大乘"},"emoji":["https://unpkg.com/@waline/emojis@1.1.0/weibo","https://unpkg.com/@waline/emojis@1.1.0/alus","https://unpkg.com/@waline/emojis@1.1.0/bilibili","https://unpkg.com/@waline/emojis@1.1.0/qq","https://unpkg.com/@waline/emojis@1.1.0/tieba","https://unpkg.com/@waline/emojis@1.1.0/tw-emoji","https://unpkg.com/@waline/emojis@1.1.0/bmoji","https://gcore.jsdelivr.net/gh/norevi/waline-blobcatemojis@1.0/blobs"]}, {
+      el: '#waline_container',
+      path: path,
+      
+    }));
+  }
+</script>
+
+
+
+
+<script defer>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.services = Object.assign({}, JSON.parse(`{"mdrender":{"js":"/js/services/mdrender.js"},"siteinfo":{"js":"/js/services/siteinfo.js","api":null},"ghinfo":{"js":"/js/services/ghinfo.js"},"rating":{"js":"/js/services/rating.js","api":"https://star-vote.xaox.cc/api/rating"},"vote":{"js":"/js/services/vote.js","api":"https://star-vote.xaox.cc/api/vote"},"sites":{"js":"/js/services/sites.js"},"friends":{"js":"/js/services/friends.js"},"friends_and_posts":{"js":"/js/services/friends_and_posts.js"},"timeline":{"js":"/js/services/timeline.js"},"fcircle":{"js":"/js/services/fcircle.js"},"weibo":{"js":"/js/services/weibo.js"},"memos":{"js":"/js/services/memos.js"},"voice":{"js":"/js/plugins/voice.js"},"video":{"js":"/js/plugins/video.js"},"download-file":{"js":"/js/plugins/download-file.js"},"twikoo":{"js":"/js/services/twikoo_latest_comment.js"},"waline":{"js":"/js/services/waline_latest_comment.js"},"artalk":{"js":"/js/services/artalk_latest_comment.js"},"giscus":{"js":"/js/services/giscus_latest_comment.js"},"contributors":{"edit_this_page":{"_posts/":null,"wiki/stellar/":"https://github.com/xaoxuu/hexo-theme-stellar-docs/blob/main/"},"js":"/js/services/contributors.js"}}`));
+    for (let id of Object.keys(ctx.services)) {
+      const js = ctx.services[id].js;
+      if (id == 'siteinfo') {
+        ctx.cardlinks = document.querySelectorAll('a.link-card[cardlink]');
+        if (ctx.cardlinks?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            setCardLink(ctx.cardlinks);
+          });
+        }
+      } else if (id == 'voice') {
+        ctx.voiceAudios = document.querySelectorAll('.voice>audio');
+        if (ctx.voiceAudios?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            createVoiceDom(ctx.voiceAudios);
+          });
+        }
+      } else if (id == 'video') {
+        ctx.videos = document.querySelectorAll('.video>video');
+        if (ctx.videos?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            videoEvents(ctx.videos);
+          });
+        }
+      } else if (id == 'download-file') {
+        ctx.files = document.querySelectorAll('.file');
+        if (ctx.files?.length > 0) {
+          utils.js(js, { defer: true }).then(function () {
+            downloadFileEvent(ctx.files);
+          });
+        }
+      } else {
+        const els = document.getElementsByClassName(`ds-${id}`);
+        if (els?.length > 0) {
+          utils.jq(() => {
+            if (id == 'timeline' || 'memos' || 'marked') {
+              utils.js(deps.marked).then(function () {
+                utils.js(js, { defer: true });
+              });
+            } else {
+              utils.js(js, { defer: true });
+            }
+          });
+        }
+      }
+    }
+
+    // chat iphone time
+    let phoneTimes = document.querySelectorAll('.chat .status-bar .time');
+
+    if (phoneTimes.length > 0) {
+      NowTime();
+      var date = new Date();
+      var sec = date.getSeconds();
+      var firstAdjustInterval = setInterval(firstAdjustTime, 1000 * (60 - sec));
+    }
+
+    function firstAdjustTime() {
+      NowTime();
+      clearInterval(firstAdjustInterval);
+      setInterval(NowTime, 1000 * 60);
+    }
+
+    function NowTime() {
+      for (let i = 0; i < phoneTimes.length; ++i) {
+        var timeSpan = phoneTimes[i];
+        var date = new Date();
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        timeSpan.innerHTML = check(hour) + ":" + check(min);
+      }
+    };
+
+    function check(val) {
+      if (val < 10) {
+        return ("0" + val);
+      }
+      return (val);
+    }
+
+    // chat quote
+    const chat_quote_obverser = new IntersectionObserver((entries, observer) => {
+      entries.filter((entry) => { return entry.isIntersecting }).sort((a, b) => a.intersectionRect.y !== b.intersectionRect.y ? a.intersectionRect.y - b.intersectionRect.y : a.intersectionRect.x - b.intersectionRect.x).forEach((entry, index) => {
+          observer.unobserve(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('quote-blink');
+            setTimeout(() => {
+              entry.target.classList.remove('quote-blink');
+            }, 1000);
+          }, Math.max(100, 16) * (index + 1));
+        });
+    });
+
+    var chatQuotes = document.querySelectorAll(".chat .talk .quote");
+    chatQuotes.forEach((quote) => {
+      quote.addEventListener('click', function () {
+        var chatCellDom = document.getElementById("quote-" + quote.getAttribute("quotedCellTag"));
+        if (chatCellDom) {
+          var chatDiv = chatCellDom.parentElement;
+          var mid = chatDiv.clientHeight / 2;
+          var offsetTop = chatCellDom.offsetTop;
+          if (offsetTop > mid - chatCellDom.clientHeight / 2) {
+            chatDiv.scrollTo({
+              top: chatCellDom.offsetTop - mid + chatCellDom.clientHeight / 2,
+              behavior: "smooth"
+            });
+          } else {
+            chatDiv.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          }
+          chat_quote_obverser.observe(chatCellDom);
+        }
+      });
+    });
+  });
+</script>
+
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    ctx.search = {
+      path: `/search.json`,
+    }
+    utils.js('/js/search/local-search.js', { defer: true });
+  });
+</script><script>
+  window.FPConfig = {
+    delay: 0,
+    ignoreKeywords: [],
+    maxRPS: 5,
+    hoverDelay: 25
+  };
+</script>
+<script defer src="https://gcore.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js"></script><script>
+  ctx.fancybox = {
+    selector: `.timenode p>img`,
+    css: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css`,
+    js: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js`
+  };
+  var selector = '[data-fancybox]:not(.error), .with-fancybox .atk-content img:not([atk-emoticon])';
+  if (ctx.fancybox.selector) {
+    selector += `, ${ctx.fancybox.selector}`
+  }
+  var needFancybox = document.querySelectorAll(selector).length !== 0;
+  if (!needFancybox) {
+    const memos = document.getElementsByClassName('ds-memos');
+    if (memos != undefined && memos.length > 0) {
+      needFancybox = true;
+    }
+    const fancybox = document.getElementsByClassName('with-fancybox');
+    if (fancybox != undefined && fancybox.length > 0) {
+      needFancybox = true;
+    }
+  }
+  if (needFancybox) {
+    utils.css(ctx.fancybox.css);
+    utils.js(ctx.fancybox.js, { defer: true }).then(function () {
+      Fancybox.bind(selector, {
+        hideScrollbar: false,
+        Thumbs: {
+          autoStart: false,
+        },
+        caption: (fancybox, slide) => {
+          return slide.triggerEl.alt || slide.triggerEl.dataset.caption || null
+        }
+      });
+    })
+  }
+</script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+    const swiper_api = document.getElementById('swiper-api');
+    if (swiper_api != undefined) {
+      utils.css(`https://unpkg.com/swiper@10.3/swiper-bundle.min.css`);
+      utils.js(`https://unpkg.com/swiper@10.3/swiper-bundle.min.js`, { defer: true }).then(function () {
+        const effect = swiper_api.getAttribute('effect') || '';
+        var swiper = new Swiper('.swiper#swiper-api', {
+          slidesPerView: 'auto',
+          spaceBetween: 8,
+          centeredSlides: true,
+          effect: effect,
+          rewind: true,
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        });
+      })
+    }
+  });
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    window.codeElements = document.querySelectorAll('.code');
+    if (window.codeElements.length > 0) {
+      ctx.copycode = {
+        default_text: `Copy`,
+        success_text: `Copied`,
+        toast: `复制成功`,
+      };
+      utils.js('/js/plugins/copycode.js');
+    }
+  });
+</script>
+
+
+<!-- inject -->
+<script type="text/javascript" src="/js/custom.js?1"></script><script src="/js/custom.js?1"></script>
+</div></body></html>
